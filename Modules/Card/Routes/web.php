@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix'=>'card'],function (){
+Route::group(['prefix'=>'card','middleware'=>'auth'],function (){
     Route::get('/create','CardController@create');
+    Route::post('/store','CardController@store');
 });

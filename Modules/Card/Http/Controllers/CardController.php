@@ -5,9 +5,23 @@ namespace Modules\Card\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Card\Http\Requests\CardRequest;
+use Modules\Card\Http\Service\CardService;
 
 class CardController extends Controller
 {
+    /**
+     * @var CardService
+     */
+    private $cardService;
+
+    public function __construct(
+        CardService $cardService
+    )
+    {
+        $this->cardService = $cardService;
+    }
+
     /**
      * Display a listing of the resource.
      * @return Renderable
@@ -31,9 +45,17 @@ class CardController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(CardRequest $request)
     {
-        //
+        $data['user_id']=auth()->id();
+        $data['fname']=$request->fname;
+        $data['lname']=$request->lname;
+        $data['email']=$request->email;
+        $data['tel']=$request->phone;
+        $data['company']=$request->company;
+        $data['position']=$request->position;
+        $card = $this->cardService->createCard($data);
+        dd($card);
     }
 
     /**
