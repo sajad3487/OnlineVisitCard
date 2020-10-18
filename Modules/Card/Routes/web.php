@@ -13,4 +13,17 @@
 Route::group(['prefix'=>'card','middleware'=>'auth'],function (){
     Route::get('/create','CardController@create');
     Route::post('/store','CardController@store');
+    Route::get('/','CardController@index');
+    Route::get('/{card_id}/show','CardController@show');
+    Route::get('/{card_id}/reorder','CardController@reorder');
+
+    Route::group(['prefix'=>'landing'],function (){
+        Route::get('/','LandingController@index');
+        Route::get('/{landing_id}/show','LandingController@show');
+        Route::get('/{landing_id}/edit','LandingController@edit');
+    });
+
+    Route::group(['prefix'=>'analysis'],function(){
+        Route::get('/','LandingController@dataAnalysis');
+    });
 });

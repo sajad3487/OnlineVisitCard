@@ -19,4 +19,14 @@ class CardRepository extends Repository
         $this->model = new Card();
     }
 
+    public function getCardsOfUser ($user_id){
+        return Card::where('user_id',$user_id)
+            ->with('landing')
+            ->get();
+    }
+
+    public function getCardById ($id){
+        return Card::with('landing')->find($id);
+    }
+
 }

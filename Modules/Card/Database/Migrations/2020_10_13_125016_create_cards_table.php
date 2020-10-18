@@ -23,6 +23,7 @@ class CreateCardsTable extends Migration
             $table->string('position')->nullable();
             $table->string('company_name')->nullable();
             $table->string('logo')->nullable();
+            $table->string('color')->nullable();
             $table->boolean('status')->default(0);
 
             $table->timestamps();

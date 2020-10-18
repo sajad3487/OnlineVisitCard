@@ -20,8 +20,17 @@ class CardService
         $this->cardRepository = $cardRepository;
     }
 
-    public function createCard ($data){
+    public function createCard($data)
+    {
         return $this->cardRepository->create($data);
+    }
+
+    public function getUserCard ($user_id){
+        return $this->cardRepository->getCardsOfUser ($user_id);
+    }
+
+    public function getCard ($card_id){
+        return $this->cardRepository->getCardById($card_id);
     }
 
 }

@@ -178,6 +178,17 @@
                                                             </div>
                                                             <!--end::Input-->
                                                         </div>
+
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label class="text-white">Color</label>
+                                                                <div></div>
+                                                                <div class="custom-file">
+                                                                    <input class="form-control" name="color" type="color" value="#563d7c" id="example-color-input"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>

@@ -16,12 +16,12 @@ class CreateLandingsTable extends Migration
         Schema::create('landings', function (Blueprint $table) {
             $table->id();
             $table->integer('card_id');
-            $table->string('color')->nullable();
+            $table->integer('user_id');
+            $table->string('picture')->nullable();
             $table->string('work_address')->nullable();
             $table->string('home_address')->nullable();
             $table->string('work_phone')->nullable();
             $table->string('home_phone')->nullable();
-            $table->string('mobile');
             $table->string('fax')->nullable();
             $table->string('work_website')->nullable();
             $table->string('personal_website')->nullable();

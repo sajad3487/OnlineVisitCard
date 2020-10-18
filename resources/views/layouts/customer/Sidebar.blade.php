@@ -62,54 +62,43 @@
                 </li>
 
 
-                <li class="menu-item @if(isset($active) && $active == 2)menu-item-active @endif" aria-haspopup="true"><a href="{{url('invoices')}}" class="menu-link "><span
+                <li class="menu-item @if(isset($active) && $active == 2)menu-item-active @endif" aria-haspopup="true"><a href="{{url('card')}}" class="menu-link "><span
                             class="svg-icon menu-icon">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg--><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path
-                                    d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z"
-                                    fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3"
-                                      transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
-                                      x="16.3255682" y="2.94551858" width="3" height="18" rx="1"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span><span class="menu-text">Orders</span></a>
+                                <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Address-card.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"/>
+                                        <path d="M6,2 L18,2 C19.6568542,2 21,3.34314575 21,5 L21,19 C21,20.6568542 19.6568542,22 18,22 L6,22 C4.34314575,22 3,20.6568542 3,19 L3,5 C3,3.34314575 4.34314575,2 6,2 Z M12,11 C13.1045695,11 14,10.1045695 14,9 C14,7.8954305 13.1045695,7 12,7 C10.8954305,7 10,7.8954305 10,9 C10,10.1045695 10.8954305,11 12,11 Z M7.00036205,16.4995035 C6.98863236,16.6619875 7.26484009,17 7.4041679,17 C11.463736,17 14.5228466,17 16.5815,17 C16.9988413,17 17.0053266,16.6221713 16.9988413,16.5 C16.8360465,13.4332455 14.6506758,12 11.9907452,12 C9.36772908,12 7.21569918,13.5165724 7.00036205,16.4995035 Z" fill="#000000"/>
+                                    </g>
+                                </svg>
+                            <!--end::Svg Icon--></span><span class="menu-text">Cards</span></a>
                 </li>
 
-                <li class="menu-item @if(isset($active) && $active == 3)menu-item-active @endif" aria-haspopup="true"><a href="{{url('previousDesign')}}" class="menu-link "><span
+                <li class="menu-item @if(isset($active) && $active == 3)menu-item-active @endif" aria-haspopup="true"><a href="{{url('card/landing')}}" class="menu-link "><span
                             class="svg-icon menu-icon">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg--><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path
-                                    d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z"
-                                    fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3"
-                                      transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
-                                      x="16.3255682" y="2.94551858" width="3" height="18" rx="1"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span><span class="menu-text">Previous Design</span></a>
+                                <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\General\Clipboard.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"/>
+                                        <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"/>
+                                        <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"/>
+                                        <rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"/>
+                                        <rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"/>
+                                    </g>
+                                </svg>
+                            <!--end::Svg Icon--></span>
+                        <span class="menu-text">Landing Pages</span></a>
                 </li>
-                <li class="menu-item @if(isset($active) && $active == 4)menu-item-active @endif" aria-haspopup="true"><a href="{{url('contacts')}}" class="menu-link "><span
+                <li class="menu-item @if(isset($active) && $active == 4)menu-item-active @endif" aria-haspopup="true"><a href="{{url('card/analysis')}}" class="menu-link "><span
                             class="svg-icon menu-icon">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg--><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path
-                                    d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z"
-                                    fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3"
-                                      transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
-                                      x="16.3255682" y="2.94551858" width="3" height="18" rx="1"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span><span class="menu-text">Contacts</span></a>
+                                <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Chart-line1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"/>
+                                        <path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z" fill="#000000" fill-rule="nonzero"/>
+                                        <path d="M8.7295372,14.6839411 C8.35180695,15.0868534 7.71897114,15.1072675 7.31605887,14.7295372 C6.9131466,14.3518069 6.89273254,13.7189711 7.2704628,13.3160589 L11.0204628,9.31605887 C11.3857725,8.92639521 11.9928179,8.89260288 12.3991193,9.23931335 L15.358855,11.7649545 L19.2151172,6.88035571 C19.5573373,6.44687693 20.1861655,6.37289714 20.6196443,6.71511723 C21.0531231,7.05733733 21.1271029,7.68616551 20.7848828,8.11964429 L16.2848828,13.8196443 C15.9333973,14.2648593 15.2823707,14.3288915 14.8508807,13.9606866 L11.8268294,11.3801628 L8.7295372,14.6839411 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                                    </g>
+                                </svg><!--end::Svg Icon-->
+                            <!--end::Svg Icon--></span>
+                        <span class="menu-text">Data Analysis</span>
+                    </a>
                 </li>
                 <li class="menu-item @if(isset($active) && $active == 5)menu-item-active @endif" aria-haspopup="true"><a href="{{url('profile')}}" class="menu-link "><span
                             class="svg-icon menu-icon">

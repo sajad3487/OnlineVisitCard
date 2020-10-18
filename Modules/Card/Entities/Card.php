@@ -15,6 +15,11 @@ class card extends Model
         'position',
         'company_name',
         'logo',
+        'color',
         'status',
     ];
+
+    public function landing (){
+        return $this->hasOne(landing::class,'card_id','id');
+    }
 }
