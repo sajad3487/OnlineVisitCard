@@ -56,10 +56,10 @@
                                 </g>
                             </svg><!--end::Svg Icon--></span><span class="menu-text">Dashboard</span></a></li>
 
-                <li class="menu-section ">
-                    <h4 class="menu-text">Layout</h4>
-                    <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
-                </li>
+{{--                <li class="menu-section ">--}}
+{{--                    <h4 class="menu-text"></h4>--}}
+{{--                    <i class="menu-icon ki ki-bold-more-hor icon-md"></i>--}}
+{{--                </li>--}}
 
 
                 <li class="menu-item @if(isset($active) && $active == 2)menu-item-active @endif" aria-haspopup="true"><a href="{{url('card')}}" class="menu-link "><span
@@ -87,7 +87,7 @@
                             <!--end::Svg Icon--></span>
                         <span class="menu-text">Landing Pages</span></a>
                 </li>
-                <li class="menu-item @if(isset($active) && $active == 4)menu-item-active @endif" aria-haspopup="true"><a href="{{url('card/analysis')}}" class="menu-link "><span
+                <li class="menu-item @if(isset($active) && $active == 4)menu-item-active @endif" aria-haspopup="true"><a href="{{url('card/analysis/30')}}" class="menu-link "><span
                             class="svg-icon menu-icon">
                                 <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Chart-line1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

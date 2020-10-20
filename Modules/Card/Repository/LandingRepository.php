@@ -25,4 +25,11 @@ class LandingRepository extends Repository
             ->get();
     }
 
+    public function getAnalyzerLandingOfUser ($user_id){
+        return landing::where('user_id',$user_id)
+            ->where('type',3)
+            ->with('card')
+            ->get();
+    }
+
 }

@@ -49,7 +49,7 @@
                                         <span>sed do eiusmod elpors labore et dolore</span>
                                         <span>magna siad enim aliqua</span>
                                     </p>
-                                    <a href="{{url('card/create')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                                    <a href="{{url('card/create/1')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
                                     <!--end::Content-->
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                         <span>sed do eiusmod elpors labore et dolore</span>
                                         <span>magna siad enim aliqua</span>
                                     </p>
-                                    <a href="{{url('card/create')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                                    <a href="{{url('card/create/2')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
                                     <!--end::Content-->
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                                         <span>sed do eiusmod elpors labore et dolore</span>
                                         <span>magna siad enim aliqua</span>
                                     </p>
-                                    <a href="{{url('card/create')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                                    <a href="{{url('card/create/3')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
                                     <!--end::Content-->
                                 </div>
                             </div>
@@ -169,7 +169,7 @@
                                         <span>sed do eiusmod elpors labore et dolore</span>
                                         <span>magna siad enim aliqua</span>
                                     </p>
-                                    <a href="{{url('card/create')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                                    <a href="{{url('card/create/4')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
                                     <!--end::Content-->
                                 </div>
                             </div>
@@ -204,7 +204,7 @@
                                         <span>sed do eiusmod elpors labore et dolore</span>
                                         <span>magna siad enim aliqua</span>
                                     </p>
-                                    <a href="{{url('card/create')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                                    <a href="{{url('card/create/5')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
                                     <!--end::Content-->
                                 </div>
                             </div>
@@ -239,7 +239,7 @@
                                         <span>sed do eiusmod elpors labore et dolore</span>
                                         <span>magna siad enim aliqua</span>
                                     </p>
-                                    <a href="{{url('card/create')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                                    <a href="{{url('card/create/6')}}" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
                                     <!--end::Content-->
                                 </div>
                             </div>

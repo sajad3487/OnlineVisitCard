@@ -36,4 +36,8 @@ class LandingService
         return $this->landingRepo->update($data,$id);
     }
 
+    public function getLandingWithAnalyzer ($user_id){
+        return $this->landingRepo->getAnalyzerLandingOfUser ($user_id);
+    }
+
 }

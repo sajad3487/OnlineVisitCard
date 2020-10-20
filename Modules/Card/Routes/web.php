@@ -11,11 +11,15 @@
 |
 */
 Route::group(['prefix'=>'card','middleware'=>'auth'],function (){
-    Route::get('/create','CardController@create');
+    Route::get('/create/{type}','CardController@create');
     Route::post('/store','CardController@store');
     Route::get('/','CardController@index');
     Route::get('/{card_id}/show','CardController@show');
     Route::get('/{card_id}/reorder','CardController@reorder');
+
+    Route::group(['prefix'=>'payment'],function(){
+        Route::get('/{type}/company','CardController@paymentCompany');
+    });
 
     Route::group(['prefix'=>'landing'],function (){
         Route::get('/','LandingController@index');
@@ -24,7 +28,7 @@ Route::group(['prefix'=>'card','middleware'=>'auth'],function (){
     });
 
     Route::group(['prefix'=>'analysis'],function(){
-        Route::get('/','LandingController@dataAnalysis');
+        Route::get('/{period}','LandingController@dataAnalysis');
     });
 });
 Route::get('card/landing/{landing_id}/show','LandingController@show');

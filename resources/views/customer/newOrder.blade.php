@@ -165,6 +165,7 @@
                                                             <!--end::Input-->
                                                         </div>
                                                     </div>
+                                                    @if($type_id >= 2)
                                                     <div class="row">
                                                         <div class="col-xl-6">
                                                             <!--begin::Input-->
@@ -178,7 +179,7 @@
                                                             </div>
                                                             <!--end::Input-->
                                                         </div>
-
+                                                        @if($type_id >= 3)
                                                         <div class="col-xl-6">
                                                             <div class="form-group">
                                                                 <label class="text-white">Color</label>
@@ -188,8 +189,10 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        @endif
 
                                                     </div>
+                                                    @endif
                                                 </div>
                                             </div>
 

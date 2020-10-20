@@ -122,32 +122,12 @@ class LandingController extends Controller
         //
     }
 
-    public function dataAnalysis (){
-        $users = User::select(\DB::raw("COUNT(*) as count"))
-
-            ->whereYear('created_at', date('Y'))
-
-            ->groupBy(\DB::raw("Month(created_at)"))
-
-            ->pluck('count');
-
-
-        $chart = new UserChart;
-
-        $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
-
-        $chart->dataset('New User Register Chart', 'line', $users)->options([
-
-            'fill' => 'true',
-
-            'borderColor' => '#51C1C0'
-
-        ]);
-
-
-        return view('user', compact('chart'));
-
+    public function dataAnalysis ($period){
+        $active = 4;
+        $landing = $this->landingService->getLandingWithAnalyzer(auth()->id());
+        return view('customer.dataAnalysis',compact('active','period','landing'));
     }
+
     public function GetRealIp()
     {
         if (!empty($_SERVER['HTTP_CLIENT_IP']))

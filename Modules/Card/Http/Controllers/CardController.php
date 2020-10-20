@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller;
 use Modules\Card\Http\Requests\CardRequest;
 use Modules\Card\Http\Service\CardService;
 use Modules\Card\Http\Service\LandingService;
+use Modules\Card\Http\Service\TypeService;
 
 class CardController extends Controller
 {
@@ -24,16 +25,22 @@ class CardController extends Controller
      * @var UserService
      */
     private $userService;
+    /**
+     * @var UserService
+     */
+    private $typeService;
 
     public function __construct(
         CardService $cardService,
         LandingService $landingService,
-        UserService $userService
+        UserService $userService,
+        TypeService $typeService
     )
     {
         $this->cardService = $cardService;
         $this->landingService = $landingService;
         $this->userService = $userService;
+        $this->typeService = $typeService;
     }
 
     public function index()
@@ -41,13 +48,20 @@ class CardController extends Controller
         $active = 2;
         $cards = $this->cardService->getUserCard(auth()->id());
         $user = $this->userService->getUserById(auth()->id());
-        return view('customer.cards',compact('active','cards','user'));
+        $remaining_card = ($user->paid_card - $cards->count());
+        return view('customer.cards',compact('active','cards','user','remaining_card'));
     }
 
-    public function create()
+    public function create($type_id)
     {
-        return view('customer.newOrder');
+        if ($type_id < 4){
+            return view('customer.newOrder',compact('type_id'));
+        }else{
+            $type_price = $this->typeService->getTypeById($type_id)->price;
+            return view('customer.payment',compact('type_id','type_price'));
+        }
     }
+
 
     public function store(CardRequest $request)
     {
@@ -71,7 +85,15 @@ class CardController extends Controller
         unset($data['file']);
         $data['user_id'] = auth()->id();
         $this->landingService->createLandingPage($data);
-        return redirect('/');
+        $cards = $this->cardService->getUserCard(auth()->id());
+        $user = $this->userService->getUserById(auth()->id())->toArray();
+        $remaining_card = ($user['paid_card'] - $cards->count());
+//
+//        if ($remaining_card == 0){
+//            $type_price = $this->typeService->getTypeById($type_id)->price;
+//            return view('customer.payment',compact('type_id','type_price'));
+//        }
+        return redirect('card');
     }
 
     public function show($id)
@@ -100,6 +122,14 @@ class CardController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function paymentCompany ($type){
+        $user = $this->userService->getUserById(auth()->id())->toArray();
+        $type = $this->typeService->getTypeById($type);
+        $user['paid_card'] += $type->quantity;
+        $this->userService->updateUser($user,$user['id']);
+        return redirect('card');
     }
 
 }
