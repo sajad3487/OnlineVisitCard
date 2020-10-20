@@ -33,4 +33,28 @@ class CardService
         return $this->cardRepository->getCardById($card_id);
     }
 
+    public function uploadLogo($request)
+    {
+        $destination = base_path() . '/public/logo/';
+        $filename = rand(1111111, 99999999);
+        $file = $request->file('file');
+        $newFileName = $filename . $request->file->getClientOriginalName();
+        $file->move($destination, $newFileName);
+        return '/logo/' . $newFileName;
+    }
+
+    public function uploadPicture($request)
+    {
+        $destination = base_path() . '/public/picture/';
+        $filename = rand(1111111, 99999999);
+        $file = $request->file('picture');
+        $newFileName = $filename . $request->picture->getClientOriginalName();
+        $file->move($destination, $newFileName);
+        return '/picture/' . $newFileName;
+    }
+
+    public function updateCard($data,$id){
+        return $this->cardRepository->update($data,$id);
+    }
+
 }

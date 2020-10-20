@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLandingLogsTable extends Migration
+class CreateVisitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateLandingLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_logs', function (Blueprint $table) {
+        Schema::create('visits', function (Blueprint $table) {
             $table->id();
             $table->integer('landing_id');
-            $table->integer('click')->default(1);
-            $table->integer('download')->default(1);
-
+            $table->string('ip');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateLandingLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('landing_logs');
+        Schema::dropIfExists('visits');
     }
 }

@@ -19,11 +19,13 @@ Route::group(['prefix'=>'card','middleware'=>'auth'],function (){
 
     Route::group(['prefix'=>'landing'],function (){
         Route::get('/','LandingController@index');
-        Route::get('/{landing_id}/show','LandingController@show');
         Route::get('/{landing_id}/edit','LandingController@edit');
+        Route::post('/{landing_id}/update','LandingController@update');
     });
 
     Route::group(['prefix'=>'analysis'],function(){
         Route::get('/','LandingController@dataAnalysis');
     });
 });
+Route::get('card/landing/{landing_id}/show','LandingController@show');
+

@@ -32,5 +32,8 @@ class LandingService
         return $this->landingRepo->getById($id);
     }
 
+    public function updateLandingPage($data,$id){
+        return $this->landingRepo->update($data,$id);
+    }
 
 }

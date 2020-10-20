@@ -52,7 +52,7 @@ class CardController extends Controller
     public function store(CardRequest $request)
     {
         if (isset($request->file) && $request != null){
-            $data['logo'] = $this->uploadLogo($request);
+            $data['logo'] = $this->cardService->uploadLogo($request);
         }
         $data['user_id'] = auth()->id();
         $data['fname'] = $request->fname;
@@ -65,9 +65,8 @@ class CardController extends Controller
         $card = $this->cardService->createCard($data);
         $data = $request->all();
         $data['card_id']=$card->id;
-        unset($data['picture']);
-        if (isset($request->picture) && $request != null){
-            $data['picture'] =$this->uploadPicture($request);
+        if (isset($request->picture) && $request->picture != null){
+            $data['picture'] =$this->cardService->uploadPicture($request);
         }
         unset($data['file']);
         $data['user_id'] = auth()->id();
@@ -103,23 +102,4 @@ class CardController extends Controller
         //
     }
 
-    public function uploadLogo($request)
-    {
-        $destination = base_path() . '/public/logo/';
-        $filename = rand(1111111, 99999999);
-        $file = $request->file('file');
-        $newFileName = $filename . $request->file->getClientOriginalName();
-        $file->move($destination, $newFileName);
-        return '/logo/' . $newFileName;
-    }
-
-    public function uploadPicture($request)
-    {
-        $destination = base_path() . '/public/picture/';
-        $filename = rand(1111111, 99999999);
-        $file = $request->file('picture');
-        $newFileName = $filename . $request->picture->getClientOriginalName();
-        $file->move($destination, $newFileName);
-        return '/picture/' . $newFileName;
-    }
 }
