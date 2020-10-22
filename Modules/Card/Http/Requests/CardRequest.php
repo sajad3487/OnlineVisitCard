@@ -14,6 +14,7 @@ class CardRequest extends FormRequest
     public function rules()
     {
         return [
+            'type'=>'required|numeric|between:0,7',
             'fname'=>'required|string|between:2,100',
             'lname'=>'required|string|between:2,100',
             'phone'=>'required|string|between:2,100',

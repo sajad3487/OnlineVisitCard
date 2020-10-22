@@ -54,11 +54,12 @@ class CardController extends Controller
 
     public function create($type_id)
     {
+        $user = $this->userService->getUserById(auth()->id());
         if ($type_id < 4){
-            return view('customer.newOrder',compact('type_id'));
+            return view('customer.newOrder',compact('type_id','user'));
         }else{
             $type_price = $this->typeService->getTypeById($type_id)->price;
-            return view('customer.payment',compact('type_id','type_price'));
+            return view('customer.payment',compact('type_id','type_price','user'));
         }
     }
 
@@ -76,6 +77,7 @@ class CardController extends Controller
         $data['company_name'] = $request->company;
         $data['position'] = $request->position;
         $data['color'] = $request->color;
+        $data['type'] = $request->type;
         $card = $this->cardService->createCard($data);
         $data = $request->all();
         $data['card_id']=$card->id;
@@ -88,11 +90,11 @@ class CardController extends Controller
         $cards = $this->cardService->getUserCard(auth()->id());
         $user = $this->userService->getUserById(auth()->id())->toArray();
         $remaining_card = ($user['paid_card'] - $cards->count());
-//
-//        if ($remaining_card == 0){
-//            $type_price = $this->typeService->getTypeById($type_id)->price;
-//            return view('customer.payment',compact('type_id','type_price'));
-//        }
+        if ($remaining_card < 0){
+            $type_id = $data['type'];
+            $type_price = $this->typeService->getTypeById($type_id)->price;
+            return view('customer.payment',compact('type_id','type_price'));
+        }
         return redirect('card');
     }
 

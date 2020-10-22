@@ -89,7 +89,8 @@ class LandingController extends Controller
     public function edit($id)
     {
         $landing = $this->landingService->getLandingById($id);
-        return view('customer.editLandingPage',compact('landing'));
+        $user = $this->userService->getUserById(auth()->id());
+        return view('customer.editLandingPage',compact('landing','user'));
     }
 
     public function update(CardRequest $request, $id)
@@ -122,10 +123,18 @@ class LandingController extends Controller
         //
     }
 
-    public function dataAnalysis ($period){
+    public function dataAnalysis (Request $request){
         $active = 4;
-        $landing = $this->landingService->getLandingWithAnalyzer(auth()->id());
-        return view('customer.dataAnalysis',compact('active','period','landing'));
+        $period = 7;
+        $landings = $this->landingService->getLandingWithAnalyzer(auth()->id());
+        if ($request->all() != null){
+            $period = $request->period;
+            $landing_id = $request->landing_id;
+        }else{
+            $landing_id = $landings->first()->id;
+        }
+        $user = $this->userService->getUserById(auth()->id());
+        return view('customer.dataAnalysis',compact('active','period','landings','landing_id','user'));
     }
 
     public function GetRealIp()

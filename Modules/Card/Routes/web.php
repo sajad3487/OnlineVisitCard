@@ -28,7 +28,7 @@ Route::group(['prefix'=>'card','middleware'=>'auth'],function (){
     });
 
     Route::group(['prefix'=>'analysis'],function(){
-        Route::get('/{period}','LandingController@dataAnalysis');
+        Route::get('/','LandingController@dataAnalysis');
     });
 });
 Route::get('card/landing/{landing_id}/show','LandingController@show');

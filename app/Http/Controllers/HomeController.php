@@ -34,13 +34,15 @@ class HomeController extends Controller
     public function index()
     {
         $active = 1;
-        return view('customer.index',compact('active'));
+        $user = $this->userService->getUserById(auth()->id());
+        return view('customer.index',compact('active','user'));
     }
 
     public function profile (){
         $active = 5;
         $customer = $this->userService->getUserById(auth()->id());
-        return view('customer.profile',compact('active','customer'));
+        $user = $this->userService->getUserById(auth()->id());
+        return view('customer.profile',compact('active','customer','user'));
     }
 
     public function updateProfile (ProfileRequest $request){

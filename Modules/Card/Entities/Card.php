@@ -17,6 +17,7 @@ class card extends Model
         'logo',
         'color',
         'status',
+        'type',
     ];
 
     public function landing (){

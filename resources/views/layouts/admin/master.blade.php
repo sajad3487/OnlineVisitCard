@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <head>
     <base href="{{url('/')}}">
     <meta charset="utf-8"/>
-    <title>e-packz</title>
+    <title>Fabrizio</title>
     <meta name="description" content="Updates and statistics"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 

@@ -104,6 +104,7 @@
                                     <form class="form" action="{{url('card/store')}}" id="kt_form" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <!--begin::Wizard Step 1-->
+                                            <input type="number" name="type" value="{{$type_id}}" class="d-none">
                                         <div class="pb-5 " data-wizard-type="step-content" data-wizard-state="current">
                                             <div class="row">
                                                 <div class="col-lg-4 order-lg-2 mt-lg-20">
@@ -116,7 +117,7 @@
                                                             <!--begin::Input-->
                                                             <div class="form-group ">
                                                                 <label class="text-white">First Name <span class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" name="fname"  required placeholder="First Name"/>
+                                                                <input type="text" class="form-control" name="fname"  required placeholder="First Name" value="{{old('fname') ?? ''}}"/>
                                                             </div>
                                                             <!--end::Input-->
                                                         </div>
@@ -124,7 +125,7 @@
                                                             <!--begin::Input-->
                                                             <div class="form-group">
                                                                 <label class="text-white">Last Name <span class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" name="lname" required placeholder="Last Name"/>
+                                                                <input type="text" class="form-control" name="lname" required placeholder="Last Name" value="{{old('lname') ?? ''}}"/>
                                                             </div>
                                                             <!--end::Input-->
                                                         </div>
@@ -134,7 +135,7 @@
                                                             <!--begin::Input-->
                                                             <div class="form-group">
                                                                 <label class="text-white">Email address <span class="text-danger">*</span></label>
-                                                                <input type="email" class="form-control" name="email" placeholder="Enter email"/>
+                                                                <input type="email" class="form-control" name="email" placeholder="Enter email" value="{{old('email') ?? ''}}"/>
                                                             </div>
                                                             <!--end::Input-->
                                                         </div>
@@ -142,7 +143,7 @@
                                                             <!--begin::Input-->
                                                             <div class="form-group">
                                                                 <label class="text-white">Phone Number <span class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" name="phone" required placeholder="Phone number"/>
+                                                                <input type="text" class="form-control" name="phone" required placeholder="Phone number" value="{{old('phone') ?? ''}}"/>
                                                             </div>
                                                             <!--end::Input-->
                                                         </div>
@@ -152,7 +153,7 @@
                                                             <!--begin::Select-->
                                                             <div class="form-group">
                                                                 <label class="text-white">Company Name</label>
-                                                                <input type="text" class="form-control" name="company" required placeholder="Company Name"/>
+                                                                <input type="text" class="form-control" name="company" required placeholder="Company Name" value="{{old('company') ?? ''}}"/>
                                                             </div>
                                                             <!--end::Select-->
                                                         </div>
@@ -160,7 +161,7 @@
                                                             <!--begin::Input-->
                                                             <div class="form-group">
                                                                 <label class="text-white">Position</label>
-                                                                <input type="text" class="form-control" name="position" required placeholder="Position"/>
+                                                                <input type="text" class="form-control" name="position" required placeholder="Position" value="{{old('position') ?? ''}}"/>
                                                             </div>
                                                             <!--end::Input-->
                                                         </div>
@@ -185,7 +186,7 @@
                                                                 <label class="text-white">Color</label>
                                                                 <div></div>
                                                                 <div class="custom-file">
-                                                                    <input class="form-control" name="color" type="color" value="#563d7c" id="example-color-input"/>
+                                                                    <input class="form-control" name="color" type="color" id="example-color-input" value="{{old('color') ?? '#563d7c'}}"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -210,7 +211,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group">
                                                         <label class="text-white">Home Address</label>
-                                                        <input type="text" name="home_address" class="form-control"  placeholder="Home Address"/>
+                                                        <input type="text" name="home_address" class="form-control"  placeholder="Home Address" value="{{old('home_address') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Input-->
                                                 </div>
@@ -218,7 +219,7 @@
                                                     <!--begin::Select-->
                                                     <div class="form-group">
                                                         <label class="text-white">Word Address </label>
-                                                        <input type="text" class="form-control" name="work_address" placeholder="Work Address"/>
+                                                        <input type="text" class="form-control" name="work_address" placeholder="Work Address" value="{{old('work_address') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
                                                 </div>
@@ -230,7 +231,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group">
                                                         <label class="text-white">Home Phone</label>
-                                                        <input type="text" name="home_phone" class="form-control"  placeholder="Home Phone"/>
+                                                        <input type="text" name="home_phone" class="form-control"  placeholder="Home Phone" value="{{old('home_phone') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Input-->
                                                 </div>
@@ -238,7 +239,7 @@
                                                     <!--begin::Select-->
                                                     <div class="form-group">
                                                         <label class="text-white">Work Phone </label>
-                                                        <input type="text" name="work_phone" class="form-control"  placeholder="Work Phone"/>
+                                                        <input type="text" name="work_phone" class="form-control"  placeholder="Work Phone" value="{{old('work_phone') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
                                                 </div>
@@ -246,7 +247,7 @@
                                                     <!--begin::Select-->
                                                     <div class="form-group">
                                                         <label class="text-white">Fax</label>
-                                                        <input type="text" name="fax" class="form-control"  placeholder="Fax Number"/>
+                                                        <input type="text" name="fax" class="form-control"  placeholder="Fax Number" value="{{old('fax') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
                                                 </div>
@@ -269,7 +270,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group">
                                                         <label class="text-white">Personal Website</label>
-                                                        <input type="text" name="personal_website" class="form-control"  placeholder="Personal Website"/>
+                                                        <input type="text" name="personal_website" class="form-control"  placeholder="Personal Website" value="{{old('personal_website') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Input-->
                                                 </div>
@@ -277,7 +278,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group">
                                                         <label class="text-white">Work Website</label>
-                                                        <input type="text" name="work_website" class="form-control"  placeholder="Work Website"/>
+                                                        <input type="text" name="work_website" class="form-control"  placeholder="Work Website" value="{{old('work_website') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Input-->
                                                 </div>
@@ -294,7 +295,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group">
                                                         <label class="text-white">Facebook</label>
-                                                        <input type="text" name="facebook" class="form-control"  placeholder="Enter Your Facebook Page address"/>
+                                                        <input type="text" name="facebook" class="form-control"  placeholder="Enter Your Facebook Page address" value="{{old('facebook') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Input-->
                                                 </div>
@@ -302,7 +303,7 @@
                                                     <!--begin::Select-->
                                                     <div class="form-group">
                                                         <label class="text-white">Instagram </label>
-                                                        <input type="text" name="instagram" class="form-control"  placeholder="Enter Your Instagram Page address"/>
+                                                        <input type="text" name="instagram" class="form-control"  placeholder="Enter Your Instagram Page address" value="{{old('instagram') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
                                                 </div>
@@ -312,7 +313,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group">
                                                         <label class="text-white">Twitter</label>
-                                                        <input type="text" name="twitter" class="form-control"  placeholder="Enter Your Twitter Page address"/>
+                                                        <input type="text" name="twitter" class="form-control"  placeholder="Enter Your Twitter Page address" value="{{old('twitter') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Input-->
                                                 </div>
@@ -320,7 +321,7 @@
                                                     <!--begin::Select-->
                                                     <div class="form-group">
                                                         <label class="text-white">Linkdin </label>
-                                                        <input type="text" name="linkdin" class="form-control"  placeholder="Enter Your Linkdin Page address"/>
+                                                        <input type="text" name="linkdin" class="form-control"  placeholder="Enter Your Linkdin Page address" value="{{old('linkdin') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
                                                 </div>
@@ -330,7 +331,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group">
                                                         <label class="text-white">Skype</label>
-                                                        <input type="text" name="skype" class="form-control"  placeholder="Enter Your Skype Page address"/>
+                                                        <input type="text" name="skype" class="form-control"  placeholder="Enter Your Skype Page address" value="{{old('skype') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Input-->
                                                 </div>
@@ -338,7 +339,7 @@
                                                     <!--begin::Select-->
                                                     <div class="form-group">
                                                         <label class="text-white">WhatsApp </label>
-                                                        <input type="text" name="whatsapp" class="form-control"  placeholder="Enter Your WhatsApp Page address"/>
+                                                        <input type="text" name="whatsapp" class="form-control"  placeholder="Enter Your WhatsApp Page address" value="{{old('whatsapp') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
                                                 </div>

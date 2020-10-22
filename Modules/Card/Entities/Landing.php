@@ -9,6 +9,7 @@ class landing extends Model
     protected $fillable = [
         'card_id',
         'user_id',
+        'type',
         'picture',
         'home_address',
         'work_address',

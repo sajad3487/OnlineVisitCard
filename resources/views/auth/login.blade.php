@@ -4,7 +4,7 @@
 <!--begin::Head-->
 <head><base href="../../../">
     <meta charset="utf-8"/>
-    <title>E-Packz - Pack Your Brand Succesfully</title>
+    <title>Fabrizio</title>
     <meta name="description" content="Login page example"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
@@ -53,7 +53,7 @@
 
                 <!--begin::Aside title-->
                 <h3 class="font-weight-bolder text-center font-size-h4 font-size-h1-lg" style="color: #986923;">
-                    Pack Your Brand Succesfully<br/>
+                    Create Your New Card<br/>
 
                 </h3>
                 <!--end::Aside title-->
@@ -78,7 +78,7 @@
                         @csrf
                         <!--begin::Title-->
                         <div class="pb-13 pt-lg-0 pt-5">
-                            <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to E-Packz</h3>
+                            <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to Fabrizio</h3>
                             <span class="text-muted font-weight-bold font-size-h4">New Here? <a href="{{url('/register')}}" id="kt_login_signup" class="text-primary font-weight-bolder">Create an Account</a></span>
                         </div>
                         <!--begin::Title-->

@@ -15,39 +15,43 @@
                 <div class="card card-custom">
                     <div class="card-header flex-wrap py-5">
                         <div class="card-title">
-                            <h3 class="card-label">
+                            <h3 class="">
                                 Data Analysis
                                 {{--                                <span class="d-block text-muted pt-2 font-size-sm">This page shows Customers info</span>--}}
                             </h3>
                         </div>
                         @if(isset($landings) && $landings != null)
-                        <div class="card-toolbar">
-                            <a href="{{url('/card/analysis/7')}}" class="btn btn-light-primary font-weight-bolder mt-2 @if($period == 7 || !isset($period))active @endif mr-2">Last Week</a>
-                            <a href="{{url('/card/analysis/30')}}" class="btn btn-light-primary font-weight-bolder mt-2 @if($period == 30)active @endif mr-2">Last Month</a>
-                            <a href="{{url('/card/analysis/365')}}" class="btn btn-light-primary font-weight-bolder mt-2 @if($period == 365)active @endif mr-2">Last Year</a>
+                        <div class="col-md-7 mt-8">
+                            <form action="{{url('card/analysis')}}" method="get" class="">
+                                <div class="row">
+                                    <div class="form-group col-md-5 ">
+                                        <label for="exampleSelect1">Select Card</label>
+                                        <select class="form-control" name="landing_id" id="exampleSelect1">
+                                            @foreach($landings as $landing)
+                                                <option value="{{$landing->id}}" @if($landing->id == $landing_id) selected @endif>{{$landing->card->fname." ". $landing->card->lname}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-5 ">
+                                        <label for="exampleSelect1">Select Time</label>
+                                        <select class="form-control" name="period" id="exampleSelect1">
+                                            <option value="7" @if($period == 7) selected @endif>Last Week</option>
+                                            <option value="30" @if($period == 30) selected @endif>Last Month</option>
+                                            <option value="365" @if($period == 365) selected @endif>Last Year</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2 mt-md-8">
+                                        <button type="submit" class="btn btn-light-success mr-2 col-12">view</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                         @endif
                     </div>
 
                     <div class="card-body">
                         <div class="overflow-auto">
-
                             @if(isset($landings) && $landings != null)
-                                <form action="" class="">
-                                    <div class="row col-md-10">
-                                        <div class="form-group col-md-3 ">
-                                            <label for="exampleSelect1">Example select <span class="text-danger">*</span></label>
-                                            <select class="form-control" id="exampleSelect1">
-                                                @foreach($landings as $landing)
-                                                    <option value="{{$landing->id}}">{{$landing->card->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-2 mt-md-8">
-                                            <button type="reset" class="btn btn-light-success mr-2 col-8">view</button>
-                                        </div>
-                                    </div>
-                                </form>
                                 <div id="chart" style="height: 300px;"></div>
                                 <script src="{{asset('js/echarts.min.js')}}"></script>
                                 <!-- Chartisan -->
@@ -56,7 +60,7 @@
                                     @if($period == 7)
                                         const chart = new Chartisan({
                                             el: '#chart',
-                                            url: "{{url('api/chart/sample_chart'.'?landing='.$landing)}}",
+                                            url: "{{url('api/chart/sample_chart'.'?landing='.$landing_id)}}",
                                             hooks: new ChartisanHooks()
                                                 .legend()
                                                 .colors()
@@ -66,7 +70,7 @@
                                     @elseif ($period == 30)
                                         const chart = new Chartisan({
                                             el: '#chart',
-                                            url: "@chart('month_chart')",
+                                            url: "{{url('api/chart/month_chart'.'?landing='.$landing_id)}}",
                                             hooks: new ChartisanHooks()
                                                 .legend()
                                                 .colors()
@@ -76,7 +80,7 @@
                                     @elseif($period == 365)
                                         const chart = new Chartisan({
                                             el: '#chart',
-                                            url: "@chart('year_chart')",
+                                            url: "{{url('api/chart/year_chart'.'?landing='.$landing_id)}}",
                                             hooks: new ChartisanHooks()
                                                 .legend()
                                                 .colors()
