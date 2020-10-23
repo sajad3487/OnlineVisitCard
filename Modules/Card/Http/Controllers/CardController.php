@@ -86,16 +86,24 @@ class CardController extends Controller
         }
         unset($data['file']);
         $data['user_id'] = auth()->id();
-        $this->landingService->createLandingPage($data);
+        $landing = $this->landingService->createLandingPage($data);
         $cards = $this->cardService->getUserCard(auth()->id());
         $user = $this->userService->getUserById(auth()->id())->toArray();
         $remaining_card = ($user['paid_card'] - $cards->count());
-        if ($remaining_card < 0){
+
+        if ($remaining_card <= 0){
             $type_id = $data['type'];
             $type_price = $this->typeService->getTypeById($type_id)->price;
-            return view('customer.payment',compact('type_id','type_price'));
+            $landing_id = $landing->id;
+            $card_id = $card->id;
+            return view('customer.payment',compact('type_id','type_price','card_id','landing_id'));
+        }else{
+            $update_status['status'] = 1;
+            $this->cardService->updateCard($update_status,$card->id);
+            $this->landingService->updateLandingPage($update_status,$landing->id);
+            return redirect('card');
         }
-        return redirect('card');
+
     }
 
     public function show($id)
@@ -126,11 +134,18 @@ class CardController extends Controller
         //
     }
 
-    public function paymentCompany ($type){
+    public function pay (Request $request){
         $user = $this->userService->getUserById(auth()->id())->toArray();
-        $type = $this->typeService->getTypeById($type);
+        $type = $this->typeService->getTypeById($request->type_id);
         $user['paid_card'] += $type->quantity;
         $this->userService->updateUser($user,$user['id']);
+
+        if (isset($request->card_id)){
+            $data['status']=1;
+            $this->cardService->updateCard($data,$request->card_id);
+            $this->landingService->updateLandingPage($data,$request->landing_id);
+        }
+
         return redirect('card');
     }
 

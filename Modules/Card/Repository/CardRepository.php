@@ -21,12 +21,19 @@ class CardRepository extends Repository
 
     public function getCardsOfUser ($user_id){
         return Card::where('user_id',$user_id)
+            ->where('status','>',0)
             ->with('landing')
             ->get();
     }
 
     public function getCardById ($id){
         return Card::with('landing')->find($id);
+    }
+
+    public function getAllCards(){
+        return Card::where('status','>',0)
+            ->with('landing')
+            ->get();
     }
 
 }

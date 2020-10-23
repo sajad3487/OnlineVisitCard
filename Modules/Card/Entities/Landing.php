@@ -10,6 +10,7 @@ class landing extends Model
         'card_id',
         'user_id',
         'type',
+        'status',
         'picture',
         'home_address',
         'work_address',

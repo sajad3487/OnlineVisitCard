@@ -40,4 +40,18 @@ class LandingService
         return $this->landingRepo->getAnalyzerLandingOfUser ($user_id);
     }
 
+    public function getAllActiveLandingPages (){
+        return $this->landingRepo->getActiveLandingPages();
+    }
+
+    public function changeStatus($id){
+        $landing = $this->landingRepo->getById($id);
+        if($landing->status == 1){
+            $data['status']=2;
+        }elseif ($landing->status == 2){
+            $data['status']= 1 ;
+        }
+        return $this->landingRepo->update($data,$id);
+    }
+
 }

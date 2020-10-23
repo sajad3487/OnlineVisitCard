@@ -39,7 +39,7 @@
             data-menu-vertical="1"
             data-menu-scroll="1" data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
-            <ul class="menu-nav ">
+            <ul class="menu-nav">
                 <li class="menu-item @if(isset($active) && $active == 1)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin')}}"
                                                                                 class="menu-link "><span
                             class="svg-icon menu-icon"><!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg--><svg
@@ -56,108 +56,95 @@
                                 </g>
                             </svg><!--end::Svg Icon--></span><span class="menu-text">Dashboard</span></a></li>
 
-                <li class="menu-section ">
-                    <h4 class="menu-text">Layout</h4>
-                    <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+
+                <li class="menu-item @if(isset($active) && $active == 2)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin/card')}}" class="menu-link "><span class="svg-icon menu-icon">
+                    <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Credit-card.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <rect x="0" y="0" width="24" height="24"/>
+                            <rect fill="#000000" opacity="0.3" x="2" y="5" width="20" height="14" rx="2"/>
+                            <rect fill="#000000" x="2" y="8" width="20" height="3"/>
+                            <rect fill="#000000" opacity="0.3" x="16" y="14" width="4" height="2" rx="1"/>
+                        </g>
+                    </svg><!--end::Svg Icon--></span><span class="menu-text">Cards</span></a>
                 </li>
 
-
-
-                <li class="menu-item @if(isset($active) && $active == 2)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin/users')}}" class="menu-link "><span class="svg-icon menu-icon">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg--><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path
-                                    d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z"
-                                    fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3"
-                                      transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
-                                      x="16.3255682" y="2.94551858" width="3" height="18" rx="1"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span><span class="menu-text">Customer</span></a>
+                <li class="menu-item @if(isset($active) && $active == 3)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin/landing')}}" class="menu-link "><span class="svg-icon menu-icon">
+                    <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Barcode-scan.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <rect x="0" y="0" width="24" height="24"/>
+                            <path d="M15,9 L13,9 L13,5 L15,5 L15,9 Z M15,15 L15,20 L13,20 L13,15 L15,15 Z M5,9 L2,9 L2,6 C2,5.44771525 2.44771525,5 3,5 L5,5 L5,9 Z M5,15 L5,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,15 L5,15 Z M18,9 L16,9 L16,5 L18,5 L18,9 Z M18,15 L18,20 L16,20 L16,15 L18,15 Z M22,9 L20,9 L20,5 L21,5 C21.5522847,5 22,5.44771525 22,6 L22,9 Z M22,15 L22,19 C22,19.5522847 21.5522847,20 21,20 L20,20 L20,15 L22,15 Z" fill="#000000"/>
+                            <path d="M9,9 L7,9 L7,5 L9,5 L9,9 Z M9,15 L9,20 L7,20 L7,15 L9,15 Z" fill="#000000" opacity="0.3"/>
+                            <rect fill="#000000" opacity="0.3" x="0" y="11" width="24" height="2" rx="1"/>
+                        </g>
+                    </svg><!--end::Svg Icon--></span><span class="menu-text">Landing Pages</span></a>
+                </li>
+                <li class="menu-item @if(isset($active) && $active == 4)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin/customer')}}" class="menu-link "><span class="svg-icon menu-icon">
+                    <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Group.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon points="0 0 24 0 24 24 0 24"/>
+                            <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                            <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </svg><!--end::Svg Icon--></span><span class="menu-text">Customers</span></a>
+                </li>
+                <li class="menu-item @if(isset($active) && $active == 5)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin/products')}}" class="menu-link "><span class="svg-icon menu-icon">
+                    <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Code\Compiling.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <rect x="0" y="0" width="24" height="24"/>
+                            <path d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z" fill="#000000" opacity="0.3"/>
+                            <path d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z" fill="#000000"/>
+                        </g>
+                    </svg><!--end::Svg Icon--></span><span class="menu-text">First Pages</span></a>
                 </li>
 
-                <li class="menu-item @if(isset($active) && $active == 3)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin/categories')}}" class="menu-link "><span class="svg-icon menu-icon">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg--><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path
-                                    d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z"
-                                    fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3"
-                                      transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
-                                      x="16.3255682" y="2.94551858" width="3" height="18" rx="1"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span><span class="menu-text">Categories</span></a>
-                </li>
-                <li class="menu-item @if(isset($active) && $active == 4)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin/products')}}" class="menu-link "><span class="svg-icon menu-icon">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg--><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path
-                                    d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z"
-                                    fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3"
-                                      transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
-                                      x="16.3255682" y="2.94551858" width="3" height="18" rx="1"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span><span class="menu-text">Products</span></a>
-                </li>
+{{--                <li class="menu-item  menu-item-submenu @if(isset($active) && $active >= 5 && $active <= 10) menu-item-open @endif" aria-haspopup="true" data-menu-toggle="hover"><a--}}
+{{--                        href="javascript:;" class="menu-link menu-toggle"><span class="svg-icon menu-icon"><!--begin::Svg Icon | path:assets/media/svg/icons/Design/Bucket.svg--><svg--}}
+{{--                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"--}}
+{{--                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">--}}
+{{--                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">--}}
+{{--                                <rect x="0" y="0" width="24" height="24"/>--}}
+{{--                                <path--}}
+{{--                                    d="M5,5 L5,15 C5,15.5948613 5.25970314,16.1290656 5.6719139,16.4954176 C5.71978107,16.5379595 5.76682388,16.5788906 5.81365532,16.6178662 C5.82524933,16.6294602 15,7.45470952 15,7.45470952 C15,6.9962515 15,6.17801499 15,5 L5,5 Z M5,3 L15,3 C16.1045695,3 17,3.8954305 17,5 L17,15 C17,17.209139 15.209139,19 13,19 L7,19 C4.790861,19 3,17.209139 3,15 L3,5 C3,3.8954305 3.8954305,3 5,3 Z"--}}
+{{--                                    fill="#000000" fill-rule="nonzero"--}}
+{{--                                    transform="translate(10.000000, 11.000000) rotate(-315.000000) translate(-10.000000, -11.000000) "/>--}}
+{{--                                <path--}}
+{{--                                    d="M20,22 C21.6568542,22 23,20.6568542 23,19 C23,17.8954305 22,16.2287638 20,14 C18,16.2287638 17,17.8954305 17,19 C17,20.6568542 18.3431458,22 20,22 Z"--}}
+{{--                                    fill="#000000" opacity="0.3"/>--}}
+{{--                            </g>--}}
+{{--                        </svg><!--end::Svg Icon--></span><span class="menu-text">Customers</span><i class="menu-arrow"></i></a>--}}
+{{--                    <div class="menu-submenu"><i class="menu-arrow"></i>--}}
+{{--                        <ul class="menu-subnav">--}}
 
-                <li class="menu-item  menu-item-submenu @if(isset($active) && $active >= 5 && $active <= 10) menu-item-open @endif" aria-haspopup="true" data-menu-toggle="hover"><a
-                        href="javascript:;" class="menu-link menu-toggle"><span class="svg-icon menu-icon"><!--begin::Svg Icon | path:assets/media/svg/icons/Design/Bucket.svg--><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path
-                                    d="M5,5 L5,15 C5,15.5948613 5.25970314,16.1290656 5.6719139,16.4954176 C5.71978107,16.5379595 5.76682388,16.5788906 5.81365532,16.6178662 C5.82524933,16.6294602 15,7.45470952 15,7.45470952 C15,6.9962515 15,6.17801499 15,5 L5,5 Z M5,3 L15,3 C16.1045695,3 17,3.8954305 17,5 L17,15 C17,17.209139 15.209139,19 13,19 L7,19 C4.790861,19 3,17.209139 3,15 L3,5 C3,3.8954305 3.8954305,3 5,3 Z"
-                                    fill="#000000" fill-rule="nonzero"
-                                    transform="translate(10.000000, 11.000000) rotate(-315.000000) translate(-10.000000, -11.000000) "/>
-                                <path
-                                    d="M20,22 C21.6568542,22 23,20.6568542 23,19 C23,17.8954305 22,16.2287638 20,14 C18,16.2287638 17,17.8954305 17,19 C17,20.6568542 18.3431458,22 20,22 Z"
-                                    fill="#000000" opacity="0.3"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span><span class="menu-text">Order</span><i class="menu-arrow"></i></a>
-                    <div class="menu-submenu"><i class="menu-arrow"></i>
-                        <ul class="menu-subnav">
+{{--                            <li class="menu-item  menu-item-parent " aria-haspopup="true"><span--}}
+{{--                                    class="menu-link"><span class="menu-text">Themes</span></span></li>--}}
+{{--                            <li class="menu-item @if(isset($active) && $active == 5)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/0")}}"--}}
+{{--                                                                           class="menu-link "><i--}}
+{{--                                        class="menu-bullet menu-bullet-dot"><span></span></i><span--}}
+{{--                                        class="menu-text">All Orders</span></a></li>--}}
+{{--                            <li class="menu-item @if(isset($active) && $active == 6)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/2")}}"--}}
+{{--                                                                           class="menu-link "><i--}}
+{{--                                        class="menu-bullet menu-bullet-dot"><span></span></i><span--}}
+{{--                                        class="menu-text">Placed Order</span></a></li>--}}
+{{--                            <li class="menu-item @if(isset($active) && $active == 7)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/3")}}"--}}
+{{--                                                                           class="menu-link "><i--}}
+{{--                                        class="menu-bullet menu-bullet-dot"><span></span></i><span--}}
+{{--                                        class="menu-text">Accepted Order</span></a></li>--}}
+{{--                            <li class="menu-item @if(isset($active) && $active == 8)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/4")}}"--}}
+{{--                                                                           class="menu-link "><i--}}
+{{--                                        class="menu-bullet menu-bullet-dot"><span></span></i><span--}}
+{{--                                        class="menu-text">Shipped Order</span></a></li>--}}
+{{--                            <li class="menu-item @if(isset($active) && $active == 9)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/5")}}"--}}
+{{--                                                                           class="menu-link "><i--}}
+{{--                                        class="menu-bullet menu-bullet-dot"><span></span></i><span--}}
+{{--                                        class="menu-text">Delivered Order</span></a></li>--}}
+{{--                            <li class="menu-item @if(isset($active) && $active == 10)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/6")}}"--}}
+{{--                                                                           class="menu-link "><i--}}
+{{--                                        class="menu-bullet menu-bullet-dot"><span></span></i><span--}}
+{{--                                        class="menu-text">Canceled Order</span></a></li>--}}
 
-                            <li class="menu-item  menu-item-parent " aria-haspopup="true"><span
-                                    class="menu-link"><span class="menu-text">Themes</span></span></li>
-                            <li class="menu-item @if(isset($active) && $active == 5)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/0")}}"
-                                                                           class="menu-link "><i
-                                        class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                        class="menu-text">All Orders</span></a></li>
-                            <li class="menu-item @if(isset($active) && $active == 6)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/2")}}"
-                                                                           class="menu-link "><i
-                                        class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                        class="menu-text">Placed Order</span></a></li>
-                            <li class="menu-item @if(isset($active) && $active == 7)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/3")}}"
-                                                                           class="menu-link "><i
-                                        class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                        class="menu-text">Accepted Order</span></a></li>
-                            <li class="menu-item @if(isset($active) && $active == 8)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/4")}}"
-                                                                           class="menu-link "><i
-                                        class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                        class="menu-text">Shipped Order</span></a></li>
-                            <li class="menu-item @if(isset($active) && $active == 9)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/5")}}"
-                                                                           class="menu-link "><i
-                                        class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                        class="menu-text">Delivered Order</span></a></li>
-                            <li class="menu-item @if(isset($active) && $active == 10)menu-item-active @endif " aria-haspopup="true"><a href="{{url("admin/invoices/6")}}"
-                                                                           class="menu-link "><i
-                                        class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                        class="menu-text">Canceled Order</span></a></li>
-
-                        </ul>
-                    </div>
-                </li>
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
                 @if(isset($user) && $user->user_type ==3)
                 <li class="menu-item @if(isset($active) && $active == 11)menu-item-active @endif " aria-haspopup="true"><a href="{{url('admin/show')}}" class="menu-link "><span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg--><svg

@@ -57,4 +57,8 @@ class CardService
         return $this->cardRepository->update($data,$id);
     }
 
+    public function getAllCards (){
+        return $this->cardRepository->getAllCards ();
+    }
+
 }

@@ -21,7 +21,7 @@
                             <div class="card-header border-0 pt-5">
                                 <div class="card-title">
                                     <div class="card-label">
-                                        <div class="font-weight-bolder">Weekly Sales Stats</div>
+                                        <div class="font-weight-bolder">Quick Access</div>
 {{--                                        <div class="font-size-sm text-muted mt-2">890,344 Sales</div>--}}
                                     </div>
                                 </div>
@@ -55,8 +55,8 @@
                                             </svg><!--end::Svg Icon--></span></div>
                                             </div>
                                             <div>
-                                                <a href="{{url('/admin/products/create')}}"
-                                                   class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">New Product</a>
+                                                <a href="{{url('/admin/card')}}"
+                                                   class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Cards</a>
                                             </div>
                                         </div>
 
@@ -83,8 +83,8 @@
                                             </svg><!--end::Svg Icon--></span></div>
                                             </div>
                                             <div>
-                                                <a href="{{url('/admin/invoices/2')}}"
-                                                   class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Placed Order</a>
+                                                <a href="{{url('/admin/landing')}}"
+                                                   class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Landing Pages</a>
 
                                             </div>
                                         </div>
@@ -112,8 +112,8 @@
                                             </svg><!--end::Svg Icon--></span></div>
                                             </div>
                                             <div>
-                                                <a href="{{url('/admin/categories/create')}}"
-                                                   class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">New Category</a>
+                                                <a href="{{url('/admin/customer')}}"
+                                                   class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Customers</a>
 
                                             </div>
                                         </div>
@@ -142,8 +142,8 @@
                                     <!--begin::Body-->
                                     <div class="card-body d-flex flex-column">
                                         <!--begin::Title-->
-                                        <a href="{{url('/admin/products')}}"
-                                           class="text-white text-hover-primary font-weight-bolder font-size-h3">Products</a>
+                                        <a href="{{url('/admin/card')}}"
+                                           class="text-white text-hover-primary font-weight-bolder font-size-h3">Cards</a>
                                         <!--end::Title-->
                                     </div>
                                     <!--end::Body-->
@@ -156,13 +156,13 @@
                                     <!--begin::Body-->
                                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap">
                                         <div class="mr-2">
-                                            <h3 class="font-weight-bolder">Create New Category</h3>
+                                            <h3 class="font-weight-bolder">Landing Pages Analyzer</h3>
                                             {{--                                            <div class="text-dark-50 font-size-lg mt-2">--}}
                                             {{--                                                Generate the latest CRM Report--}}
                                             {{--                                            </div>--}}
                                         </div>
-                                        <a href="{{'/admin/categories'}}"
-                                           class="btn btn-primary font-weight-bold py-3 px-6">Create</a>
+                                        <a href="{{'/admin/landing'}}"
+                                           class="btn btn-primary font-weight-bold py-3 px-6">view</a>
                                     </div>
                                     <!--end::Body-->
                                 </div>
@@ -191,8 +191,8 @@
                                                 <div
                                                     class="text-inverse-success font-weight-bolder font-size-h2 mt-3"></div>
 
-                                                <a href="{{url('/admin/invoices/0')}}"
-                                                   class="text-inverse-success font-weight-bold font-size-lg mt-1">All Order</a>
+                                                <a href="{{url('/admin/card')}}"
+                                                   class="text-inverse-success font-weight-bold font-size-lg mt-1">All Cards</a>
                                             </div>
                                         </div>
                                         <!--end::Tiles Widget 11-->
@@ -217,7 +217,7 @@
                                                 <div
                                                     class="text-dark font-weight-bolder font-size-h2 mt-3"></div>
 
-                                                <a href="{{url('/admin/users')}}"
+                                                <a href="{{url('/admin/customer')}}"
                                                    class="text-muted text-hover-primary font-weight-bold font-size-lg mt-1">All
                                                     Customers</a>
                                             </div>

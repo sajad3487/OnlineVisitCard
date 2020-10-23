@@ -42,7 +42,7 @@
             <p class="text-white">Website (Personal) :<a href="@if(isset($card->landing->work_website)){{ strpos($card->landing->work_website, 'http') === false ? 'http://' . $card->landing->work_website : $card->landing->work_website }}@endif" target="_blank"> {{$card->landing->personal_website ?? ''}}</a></p>
             <div class="links w-row" style="margin-top: 40px">
                 <div class="column w-col w-col-4 text-left">
-                    <div class="text-block-2">Home</div>
+                    <div class="text-block-2">Home Address</div>
                     <ul class="list w-list-unstyled">
                         <li>
                             <p>{{$card->landing->home_address ?? ''}}</p>
@@ -50,7 +50,7 @@
                     </ul>
                 </div>
                 <div class="column w-col w-col-4 text-left">
-                    <div class="text-block-2">Work</div>
+                    <div class="text-block-2">Work Address</div>
                     <ul class="list w-list-unstyled">
                         <li>
                             <p>{{$card->landing->work_address ?? ''}}</p>
@@ -61,16 +61,16 @@
                     <div class="text-block-2">social</div>
                     <div class="list w-list-unstyled">
                         <div class="mt-5">
-                            <a href="{{$card->landing->facebook ?? ''}}" target="_blank" class="m-4"><i class="flaticon-facebook-letter-logo  text-success  display-3"></i></a>
-                            <a href="{{$card->landing->twitter ?? ''}}" target="_blank" class="m-4"><i class="flaticon-twitter-logo text-success  display-3"></i></a>
+                            <a href="{{$card->landing->facebook ?? ''}}" target="_blank" class="m-4"><i class="flaticon-facebook-letter-logo  text-success  display-5"></i></a>
+                            <a href="{{$card->landing->twitter ?? ''}}" target="_blank" class="m-4"><i class="flaticon-twitter-logo text-success  display-5"></i></a>
                         </div>
                         <div class="mt-5">
-                            <a href="{{$card->landing->linkdin ?? ''}}" target="_blank" class="m-4"><i class="flaticon-linkedin-logo text-success  display-3"></i></a>
-                            <a href="{{$card->landing->skype ?? ''}}" target="_blank" class="m-4"><i class="flaticon-skype-logo text-success  display-3"></i></a>
+                            <a href="{{$card->landing->linkdin ?? ''}}" target="_blank" class="m-4"><i class="flaticon-linkedin-logo text-success  display-5"></i></a>
+                            <a href="{{$card->landing->skype ?? ''}}" target="_blank" class="m-4"><i class="flaticon-skype-logo text-success  display-5"></i></a>
                         </div>
                         <div class="mt-5">
-                            <a href="{{$card->landing->whatsapp ?? ''}}" target="_blank" class="m-4"><i class="flaticon-whatsapp text-success  display-3"></i></a>
-                            <a href="{{$card->landing->instagram ?? ''}}" target="_blank" class="m-4"><i class="flaticon-instagram-logo text-success  display-3"></i></a>
+                            <a href="{{$card->landing->whatsapp ?? ''}}" target="_blank" class="m-4"><i class="flaticon-whatsapp text-success  display-5"></i></a>
+                            <a href="{{$card->landing->instagram ?? ''}}" target="_blank" class="m-4"><i class="flaticon-instagram-logo text-success  display-5"></i></a>
                         </div>
 
                     </div>

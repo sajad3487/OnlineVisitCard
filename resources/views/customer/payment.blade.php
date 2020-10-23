@@ -28,7 +28,15 @@
                         <div class="overflow-auto justify-content-center">
                             <h3 class="text-center text-muted my-10">Please pay your order</h3>
                             <h3 class="text-center text-muted my-10">Price : {{$type_price}} $</h3>
-                            <a href="{{url("card/payment/$type_id/company")}}" class="btn btn-success col-md-2 ">Pay</a>
+                            <form action="{{url('card/payment/pay')}}" method="post">
+                                @csrf
+                                <input type="number" name="type_id" value="{{$type_id}}" class="">
+                                @if(isset($card_id))
+                                    <input type="number" name="card_id" value="{{$card_id}}" class="">
+                                    <input type="number" name="landing_id" value="{{$landing_id}}" class="">
+                                    @endif
+                                <button type="submit" class="btn btn-success col-md-2 ">Pay</button>
+                            </form>
                         </div>
                     </div>
                 </div>

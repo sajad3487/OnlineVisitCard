@@ -21,13 +21,21 @@ class LandingRepository extends Repository
 
     public function getLandingOfUser ($user_id){
         return landing::where('user_id',$user_id)
+            ->where('status','>',0)
             ->with('card')
             ->get();
     }
 
     public function getAnalyzerLandingOfUser ($user_id){
         return landing::where('user_id',$user_id)
+            ->where('status','>',0)
             ->where('type',3)
+            ->with('card')
+            ->get();
+    }
+
+    public function getActiveLandingPages (){
+        return landing::where('status','>',0)
             ->with('card')
             ->get();
     }

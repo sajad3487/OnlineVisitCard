@@ -73,6 +73,10 @@ class LandingController extends Controller
 
     public function show($id)
     {
+        $landing = $this->landingService->getLandingById($id);
+        if ($landing->status != 1 ){
+            return redirect('/');
+        }
         $ip = $this->GetRealIp();
         $visit =$this->visitService->getVisitOfLandingByIp($ip,$id);
         if($visit == null){
@@ -83,6 +87,9 @@ class LandingController extends Controller
         };
         $landing = $this->landingService->getLandingById($id);
         $card = $this->cardService->getCard($landing->card_id);
+        if ($landing->status == 0 || $card->status == 0){
+            return redirect('/');
+        }
         return view('customer.landingPage',compact('card'));
     }
 
@@ -130,8 +137,11 @@ class LandingController extends Controller
         if ($request->all() != null){
             $period = $request->period;
             $landing_id = $request->landing_id;
-        }else{
+        }elseif($landings->count() != 0){
             $landing_id = $landings->first()->id;
+        }else{
+            $landing_id = null;
+            $landings = null;
         }
         $user = $this->userService->getUserById(auth()->id());
         return view('customer.dataAnalysis',compact('active','period','landings','landing_id','user'));
@@ -148,5 +158,10 @@ class LandingController extends Controller
         else
             $ip = $_SERVER['REMOTE_ADDR'];
         return $ip;
+    }
+
+    public function changeStatus ($id){
+        $this->landingService->changeStatus($id);
+        return back();
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.customer.master')
+@extends('layouts.admin.master')
 @section('content')
     <!--begin::Content-->
     <div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
@@ -17,7 +17,7 @@
                                 </h3>
                             </div>
                             <!--begin::Form-->
-                            <form class="form" action="{{url("/card/landing/$landing->id/update")}}" method="post" enctype="multipart/form-data">
+                            <form class="form" action="{{url("/admin/landing/$landing->id/update")}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body row justify-content-center">
                                     <div class="col-lg-12 pt-5">
@@ -139,7 +139,7 @@
                                     <div class="row">
                                         <div class="col-lg-5"></div>
                                         <div class="col-lg-7">
-                                            <a href="{{url('/card/landing')}}" type="reset" class="btn btn-secondary col-md-2 mr-2">Back</a>
+                                            <a href="{{url('/admin/landing')}}" type="reset" class="btn btn-secondary col-md-2 mr-2">Back</a>
                                             <button type="submit" class="btn btn-success col-md-2">Save</button>
                                         </div>
                                     </div>

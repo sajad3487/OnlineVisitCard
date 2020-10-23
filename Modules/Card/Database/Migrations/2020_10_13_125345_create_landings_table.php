@@ -18,6 +18,7 @@ class CreateLandingsTable extends Migration
             $table->integer('card_id');
             $table->integer('user_id');
             $table->integer('type');
+            $table->integer('status')->default(0);
             $table->string('picture')->nullable();
             $table->string('work_address')->nullable();
             $table->string('home_address')->nullable();
