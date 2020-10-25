@@ -52,7 +52,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" href="{{asset('slick/slick.css')}}">
     <link rel="stylesheet" href="{{asset('slick/slick-theme.css')}}">
     <link rel="stylesheet" href="{{asset('magnific-popup/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
+{{--    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />--}}
     <link rel="stylesheet" href="{{asset('css/tooplate-infinite-loop.css')}}" />
 
 

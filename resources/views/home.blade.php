@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Infinite Loop - Bootstrap 4.0 HTML Template</title>
+    <title>Fabrizio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
     <!--end::Fonts-->
 
@@ -70,19 +70,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto"  id="tmNav">
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link">Home</a>
+                        <a class="nav-link tm-nav-link" href="#infinite">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link">What We Do</a>
+                        <a class="nav-link tm-nav-link" href="#whatwedo">What We Do</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link">Testimonials</a>
+                        <a class="nav-link tm-nav-link" href="#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link">Prices</a>
+                        <a class="nav-link tm-nav-link" href="#gallery">Prices</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link">Contact</a>
+                        <a class="nav-link tm-nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
                 <a class="nav-link tm-nav-link" href="{{url('/login')}}">Login</a>
@@ -417,21 +417,22 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="tm-section-pad-top tm-parallax-2" style="min-height: 700px">
+<section id="contact" class="tm-section-pad-top tm-parallax-2" style="background-image: url({{$contact->file ?? ''}}); background-size: cover; min-height: 850px">
 
     <div class="container tm-container-contact">
 
         <div class="row">
 
             <div class="text-center col-12">
-                <h2 class="tm-section-title mb-4">{{$contact->title ?? ''}}</h2>
+                <h2 class="tm-section-title mb-md-4">{{$contact->title ?? ''}}</h2>
                 <p class="">
                     {{$contact->text ?? ''}}
                 </p><br>
             </div>
 
             <div class="col-sm-12 col-md-6">
-                <form action="" method="get">
+                <form action="{{url('contact/create')}}" method="post">
+                    @csrf
                     <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
                     <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
                     <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>

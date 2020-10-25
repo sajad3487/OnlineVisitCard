@@ -232,12 +232,12 @@
                                     @csrf
                                     <div class="card-body col-md-6 mx-auto">
                                         <div class="form-group text-left ">
-                                            <label class="">Title</label>
+                                            <label class="text-white">Title</label>
                                             <input type="text" name="title" class="form-control" value="{{$testimonial_header->title ?? ''}}"/>
                                         </div>
 
                                         <div class="form-group mb-1 text-left">
-                                            <label class="" for="exampleTextarea">Text</label>
+                                            <label class="text-white" for="exampleTextarea">Text</label>
                                             <input class="form-control" name="text" id="exampleTextarea" value=" {{$testimonial_header->text ?? ''}}" >
                                         </div>
                                         <div class="form-group text-left">
@@ -257,19 +257,20 @@
                                             <div class="col-md-6 mt-md-10">
                                                 <figure class="tm-testimonial-item">
                                                     <img src="{{$testimonial->file ?? ''}}" alt="Image" class="img-fluid mx-auto">
+                                                    <a href="{{url("admin/$testimonial->id/deleteSection")}}" class="btn btn-light-danger font-weight-bold mr-2">Delete</a>
                                                     <blockquote>{{$testimonial->text ?? ''}}</blockquote>
                                                     <figcaption>{{$testimonial->title ?? ''}}</figcaption>
                                                 </figure>
-                                                <form action="{{url("admin/$testimonial_header->id/updateSection")}}" method="post" enctype="multipart/form-data">
+                                                <form action="{{url("admin/$testimonial->id/updateSection")}}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="card-body ">
                                                         <div class="form-group mb-1 text-left">
                                                             <label class="text-white" for="exampleTextarea">Text</label>
-                                                            <input class="form-control" name="text" id="exampleTextarea" value=" {{$testimonial_header->text ?? ''}}" >
+                                                            <input class="form-control" name="text" id="exampleTextarea" value=" {{$testimonial->text ?? ''}}" >
                                                         </div>
                                                         <div class="form-group text-left">
                                                             <label class="text-white">Title</label>
-                                                            <input type="text" name="title" class="form-control" value="{{$testimonial_header->title ?? ''}}"/>
+                                                            <input type="text" name="title" class="form-control" value="{{$testimonial->title ?? ''}}"/>
                                                         </div>
                                                         <div class="form-group text-left">
                                                             <label class="text-white">File Browser</label>
@@ -291,6 +292,7 @@
                                 <hr class="border-white">
                                 <form action="{{url("admin/createSection")}}" method="post" enctype="multipart/form-data" class="col-md-6">
                                     @csrf
+                                    <input type="text" name="section" value="testimonial" class="d-none">
                                     <div class="card-body ">
                                         <h2>Add new Testinonial :</h2>
                                         <div class="form-group mb-1 text-left">
@@ -661,7 +663,7 @@
                 </section>
 
                 <!-- Contact -->
-                <section id="contact" class="tm-section-pad-top tm-parallax-2">
+                <section id="contact" class="tm-section-pad-top tm-parallax-2" style="background-image: url({{$contact->file ?? ''}}) ">
 
                     <div class="container tm-container-contact">
 
@@ -672,7 +674,7 @@
                                 <p class="">
                                     {{$contact->text ?? ''}}
                                 </p><br>
-                                <form action="{{url("admin/$contact->id/updateType")}}" method="post" enctype="multipart/form-data">
+                                <form action="{{url("admin/$contact->id/updateSection")}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="card-body mx-auto mb-5 col-md-6">
                                         <div class="form-group text-left ">
@@ -682,6 +684,14 @@
                                         <div class="form-group mb-1 text-left">
                                             <label class="text-white" for="exampleTextarea">Text</label>
                                             <input class="form-control" type="text" name="text" id="exampleTextarea" value=" {{$contact->text ?? ''}}" >
+                                        </div>
+                                        <div class="form-group text-left">
+                                            <label class="text-white">File Browser</label>
+                                            <div></div>
+                                            <div class="custom-file ">
+                                                <input type="file" name="file" class="custom-file-input" id="customFile"/>
+                                                <label class="custom-file-label " for="customFile">Choose Picture</label>
+                                            </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary mt-2">Save</button>
                                     </div>
@@ -700,9 +710,9 @@
                             <div class="col-sm-12 col-md-6">
 
                                 <div class="contact-item">
-                                    <a rel="nofollow" href="mailto:{{$contact->title ?? ''}}" class="item-link">
+                                    <a rel="nofollow" href="mailto:{{$info->title ?? ''}}" class="item-link">
                                         <i class="far fa-2x fa-envelope mr-4"></i>
-                                        <span class="mb-0">{{$contact->title ?? ''}}</span>
+                                        <span class="mb-0">{{$info->title ?? ''}}</span>
                                     </a>
                                 </div>
 
@@ -713,7 +723,7 @@
                                         <span class="mb-0">{{$info->text}}</span>
                                     </a>
                                 </div>
-                                <form action="{{url("admin/$info->id/updateType")}}" method="post" enctype="multipart/form-data">
+                                <form action="{{url("admin/$info->id/updateSection")}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="card-body mx-auto">
                                         <div class="form-group text-left ">

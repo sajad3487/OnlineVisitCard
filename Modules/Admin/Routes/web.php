@@ -25,9 +25,16 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
             Route::get('/','AdminCustomerController@index');
         });
 
+        Route::group(['prefix'=>'contact'],function (){
+            Route::get('/','AdminContactController@index');
+            Route::get('/{contact_id}/show','AdminContactController@show');
+            Route::get('/{contact_id}/makeUnread','AdminContactController@makeUnread');
+        });
+
         Route::get('analysis/{landing_id}','AdminLandingController@dataAnalysis');
         Route::get('firstPage','AdminController@firstPage');
         Route::post('{section_id}/updateSection','AdminController@updateSection');
+        Route::get('{section_id}/deleteSection','AdminController@deleteSection');
         Route::post('{type_id}/updateType','AdminController@updateType');
         Route::post('createSection','AdminController@createSection');
 

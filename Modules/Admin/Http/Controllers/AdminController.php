@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Modules\Admin\Http\Requests\AdminRequest;
+use Modules\Admin\Http\Requests\AdminSectionRequest;
 use Modules\Card\Http\Service\TypeService;
 use Modules\Category\Http\Services\CategoryService;
 use Modules\Order\Http\Services\InvoiceService;
@@ -63,16 +64,33 @@ class AdminController extends Controller
         return view('admin.adminFirstPage',compact('slider','wwdheader','wwd1','wwd2','wwd3','wwd4','testimonial_header','testimonials','price_header','type1','type2','type3','type4','type5','type6','contact','info'));
     }
 
-    public function updateSection (Request $request,$section_id){
-        dd($request->all(),$section_id);
+    public function updateSection (AdminSectionRequest $request,$section_id){
+        $data = $request->all();
+        if (isset($request->file) && $request != null){
+            $data['file'] = $this->sectionService->uploadLogo($request);
+        }
+        $this->sectionService->updateSection($data,$section_id);
+        return back();
     }
 
-    public function createSection (Request $request){
-        dd($request->all());
+    public function createSection (AdminSectionRequest $request){
+        $data = $request->all();
+        if (isset($request->file) && $request != null){
+            $data['file'] = $this->sectionService->uploadLogo($request);
+        }
+        $this->sectionService->createSection($data);
+        return back();
     }
 
     public function updateType (Request $request,$type_id){
-        dd($request->all());
+        $data = $request->all();
+        $this->typeService->updateType($data,$type_id);
+        return back();
+    }
+
+    public function deleteSection ($section_id){
+        $this->sectionService->deleteSection($section_id);
+        return back();
     }
 
 }

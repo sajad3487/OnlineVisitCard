@@ -8,7 +8,8 @@ class Section extends Model
 {
     protected $fillable = [
         'section',
-        'pic',
+        'title',
+        'file',
         'text',
         'button_text',
         'priority',

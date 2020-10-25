@@ -24,4 +24,8 @@ class TypeService
         return $this->typeRepo->getById($id);
     }
 
+    public function updateType ($data,$id){
+        return $this->typeRepo->update($data,$id);
+    }
+
 }

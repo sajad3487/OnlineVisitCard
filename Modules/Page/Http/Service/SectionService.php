@@ -40,4 +40,14 @@ class SectionService
         return $this->sectionRepo->getAllSectionByName ($section);
     }
 
+    public function uploadLogo($request)
+    {
+        $destination = base_path() . '/public/pic/';
+        $filename = rand(1111111, 99999999);
+        $file = $request->file('file');
+        $newFileName = $filename . $request->file->getClientOriginalName();
+        $file->move($destination, $newFileName);
+        return '/pic/' . $newFileName;
+    }
+
 }
