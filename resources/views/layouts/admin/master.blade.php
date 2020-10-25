@@ -48,6 +48,13 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <link href="{{asset('plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css"/>
 
+    <link rel="stylesheet" href="{{asset('fontawesome-5.5/css/all.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('slick/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('slick/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('magnific-popup/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/tooplate-infinite-loop.css')}}" />
+
 
 </head>
 <!--end::Head-->
@@ -106,7 +113,7 @@ License: You must have a valid license purchased only from themeforest(the above
         @include('layouts.admin.Sidebar')
 
         <!--begin::Wrapper-->
-        <div class="d-flex flex-column flex-row-fluid wrapper pt-22" id="kt_wrapper">
+        <div class="d-flex flex-column flex-row-fluid wrapper pt-20" id="kt_wrapper">
 
             @include('layouts.admin.Header')
 

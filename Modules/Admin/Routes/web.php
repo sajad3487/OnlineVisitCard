@@ -26,6 +26,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
         });
 
         Route::get('analysis/{landing_id}','AdminLandingController@dataAnalysis');
+        Route::get('firstPage','AdminController@firstPage');
+        Route::post('{section_id}/updateSection','AdminController@updateSection');
+        Route::post('{type_id}/updateType','AdminController@updateType');
+        Route::post('createSection','AdminController@createSection');
 
     });
 });

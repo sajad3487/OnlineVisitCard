@@ -17,9 +17,11 @@ Auth::routes();
 //Route::post('login',function (Request $request){
 //        dd($request->all());
 //});
+
+
+
 Route::group(['middleware'=>'auth'],function (){
    Route::group(['middleware'=>'CheckUser'],function (){
-       Route::get('/', 'HomeController@index');
 
        Route::get('/home', 'HomeController@index')->name('home');
 
