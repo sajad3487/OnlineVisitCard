@@ -166,34 +166,7 @@
                                                             <!--end::Input-->
                                                         </div>
                                                     </div>
-                                                    @if($type_id >= 2)
-                                                    <div class="row">
-                                                        <div class="col-xl-6">
-                                                            <!--begin::Input-->
-                                                            <div class="form-group">
-                                                                <label class="text-white">Logo</label>
-                                                                <div></div>
-                                                                <div class="custom-file">
-                                                                    <input type="file" name="file" class="custom-file-input" id="file"/>
-                                                                    <label class="custom-file-label" for="file">Choose Your Logo</label>
-                                                                </div>
-                                                            </div>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        @if($type_id >= 3)
-                                                        <div class="col-xl-6">
-                                                            <div class="form-group">
-                                                                <label class="text-white">Color</label>
-                                                                <div></div>
-                                                                <div class="custom-file">
-                                                                    <input class="form-control" name="color" type="color" id="example-color-input" value="{{old('color') ?? '#563d7c'}}"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        @endif
 
-                                                    </div>
-                                                    @endif
                                                 </div>
                                             </div>
 
@@ -205,6 +178,34 @@
                                         <!--begin::Wizard Step 2-->
                                         <div class="pb-5" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-white">Enter Information of Landing Page</h4>
+                                            @if($type_id >= 2)
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <!--begin::Input-->
+                                                        <div class="form-group">
+                                                            <label class="text-white">Logo</label>
+                                                            <div></div>
+                                                            <div class="custom-file">
+                                                                <input type="file" name="file" class="custom-file-input" id="file"/>
+                                                                <label class="custom-file-label" for="file">Choose Your Logo</label>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    @if($type_id >= 3)
+                                                        <div class="col-xl-2">
+                                                            <div class="form-group">
+                                                                <label class="text-white">Color of Landing Page</label>
+                                                                <div></div>
+                                                                <div class="custom-file">
+                                                                    <input class="form-control" name="color" type="color" id="example-color-input" value="{{old('color') ?? '#563d7c'}}"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+
+                                                </div>
+                                            @endif
                                             <!--begin::Input-->
                                             <div class="row">
                                                 <div class="col-xl-6">

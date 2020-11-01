@@ -19,6 +19,7 @@
                             <!--begin::Form-->
                             <form class="form" action="{{url("/card/landing/$landing->id/update")}}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                <input type="number" name="type" value="{{$landing->card->type}}" class="d-none">
                                 <div class="card-body row justify-content-center">
                                     <div class="col-lg-12 pt-5">
                                         @include('fragment.error')
@@ -54,6 +55,19 @@
                                     </div>
                                     <div class="col-lg-12 row mt-10">
                                         <div class="col-lg-9">
+                                            <div class="row">
+
+                                                <div class="col-xl-4">
+                                                    <div class="form-group">
+                                                        <label class="text-dark">Color of Landing Page</label>
+                                                        <div></div>
+                                                        <div class="custom-file">
+                                                            <input class="form-control" name="color" type="color" id="example-color-input" value="{{$landing->card->color ?? old('color') ?? '#563d7c'}}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                             <div class="form-group row">
                                                 <div class="col-lg-6">
                                                     <label class=" col-form-label text-right">Fax:</label>

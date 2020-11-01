@@ -19,6 +19,7 @@ class CardRequest extends FormRequest
             'lname'=>'required|string|between:2,100',
             'phone'=>'required|string|between:2,100',
             'email'=>'required|string|email|max:100',
+            'color'=>'required|string|max:10',
             'company'=>'nullable|string|max:100',
             'position'=>'nullable|string|max:100',
             'home_address'=>'nullable|string|max:250',

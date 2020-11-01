@@ -90,7 +90,21 @@ class LandingController extends Controller
         if ($landing->status == 0 || $card->status == 0){
             return redirect('/');
         }
-        return view('customer.landingPage',compact('card'));
+        $contact['name'] = $card->fname." ".$card->lname;
+        $contact['email'] = $card->email;
+        $contact['tel'] = $card->tel;
+        $contact['fax'] = $card->landing->fax;
+        $contact['website'] = $card->landing->personal_website;
+        $contact['address'] = $card->landing->home_address;
+        $vCard =$this->raf_create_vcard($contact);
+        $color = ltrim($card->color,'#');
+        if ($this->conversion($color) > 500){
+            $theme = "light_mode" ;
+        }else{
+            $theme = "dark_mode";
+        }
+
+        return view('customer.landingPage',compact('card','vCard','theme'));
     }
 
     public function edit($id)
@@ -112,6 +126,7 @@ class LandingController extends Controller
         $data['tel'] = $request->phone;
         $data['company_name'] = $request->company_name;
         $data['position'] = $request->position;
+        $data['color'] = $request->color;
         $card_id = $this->landingService->getLandingById($id)->card_id;
         $this->cardService->updateCard($data,$card_id);
         $data = $request->all();
@@ -163,5 +178,24 @@ class LandingController extends Controller
     public function changeStatus ($id){
         $this->landingService->changeStatus($id);
         return back();
+    }
+
+    function raf_create_vcard($contact){
+        $format_name = utf8_encode($contact['name']);
+        $format_email = utf8_encode($contact['email']);
+        $format_tel = utf8_encode($contact['tel']);
+        $format_fax = utf8_encode($contact['fax']);
+        $format_www = utf8_encode($contact['website']);
+        $format_address = utf8_encode($contact['address']);
+
+        return 'BEGIN%3AVCARD%0D%0AVERSION%3A4.0%0D%0AN%3A%3B'.$format_name.'%3B%3B%3B%0D%0AFN%3A'.$format_name.'%0D%0AEMAIL%3A'.$format_email.'%0D%0AORG%3A'.$format_name.'%0D%0ATEL%3A'.$format_tel.'%0D%0ATEL%3Btype%3DFAX%3A'.$format_fax.'%0D%0AURL%3Btype%3Dpref%3A'.$format_www.'%0D%0AADR%3A%3B'.$format_address.'%3B%3B%3B%3B%3BSpain%0D%0AEND%3AVCARD';
+    }
+
+    function conversion($hex) {
+        $r = hexdec(substr($hex,0,2)); //Converting to rgb
+        $g = hexdec(substr($hex,2,2));
+        $b = hexdec(substr($hex,4,2));
+
+        return $r + $g + $b; //Adding up the rgb values
     }
 }

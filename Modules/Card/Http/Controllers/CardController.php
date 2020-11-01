@@ -103,7 +103,6 @@ class CardController extends Controller
             $this->landingService->updateLandingPage($update_status,$landing->id);
             return redirect('card');
         }
-
     }
 
     public function show($id)
@@ -114,25 +113,6 @@ class CardController extends Controller
         return view('customer.showCard',compact('active','card','user'));
     }
 
-    public function reorder($id){
-        dd($id);
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
     public function pay (Request $request){
         $user = $this->userService->getUserById(auth()->id())->toArray();

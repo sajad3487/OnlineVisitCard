@@ -37,7 +37,7 @@ a {
 
 .name {
   margin-bottom: 10px;
-  color: #47bec7;
+  /*color: #47bec7;*/
   font-size: 16px;
   line-height: 100%;
   letter-spacing: 1px;
@@ -50,7 +50,7 @@ a {
 
 .tagline {
   margin-bottom: 40px;
-  color: #ddd;
+  /*color: #ddd;*/
   font-size: 58px;
   line-height: 100%;
 }
@@ -58,7 +58,7 @@ a {
 .bio {
   margin-bottom: 15px;
   font-family: Lora, sans-serif;
-  color: #848d96;
+  /*color: #646c75;*/
   font-size: 21px;
   line-height: 140%;
 }
@@ -74,7 +74,7 @@ a {
 
 .list {
   font-family: Lora, sans-serif;
-  color: #848d96;
+  /*color: #848d96;*/
   font-size: 16px;
   line-height: 160%;
 }
@@ -159,7 +159,12 @@ a {
   -o-object-fit: cover;
   object-fit: cover;
 }
-
+.dark_mode{
+    color: #d3d3d3;
+}
+.light_mode{
+    color: #525152;
+}
 @media screen and (max-width: 991px) {
   .leftcontent {
     display: block;
@@ -226,5 +231,6 @@ a {
     height: 240px;
     max-height: 30vh;
   }
+
 }
 

@@ -54,6 +54,10 @@
     <!--begin::Global Theme Styles(used by all pages)-->
 
 </head>
+
+
+
+
 <body>
 <!-- Hero section -->
 <section id="infinite" class="text-white tm-font-big tm-parallax" style="min-height: 750px;background-image: url({{asset($slider->file)}}">
@@ -73,7 +77,7 @@
                         <a class="nav-link tm-nav-link" href="#infinite">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link" href="#whatwedo">What We Do</a>
+                        <a class="nav-link tm-nav-link" href="#whatwedo">What is Bit</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link tm-nav-link" href="#testimonials">Testimonials</a>
@@ -208,6 +212,7 @@
         </div>
         <div class="row">
             <div class="col-12">
+                <h3 class="tm-text-primary mb-2 mt-10 text-center">Personal Cards</h3>
                 <div class="row justify-content-center">
                     <!--begin: Pricing-->
                     <div class="col-md-4 col-xxl-3">
@@ -309,6 +314,8 @@
                     </div>
                     <!--end: Pricing-->
                 </div>
+
+                <h3 class="tm-text-primary mb-2 mt-10 text-center">Company Cards</h3>
                 <div class="row justify-content-center">
                     <!--begin: Pricing-->
                     <div class="col-md-4 col-xxl-3">
