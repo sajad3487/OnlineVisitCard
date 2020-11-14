@@ -64,7 +64,7 @@
                                             hooks: new ChartisanHooks()
                                                 .legend()
                                                 .colors()
-                                                .datasets(['line', 'line'])
+                                                .datasets(['line', 'line','line', 'line','line', 'line','line', 'line','line'])
                                                 .tooltip(),
                                         });
                                     @elseif ($period == 30)
@@ -74,7 +74,7 @@
                                             hooks: new ChartisanHooks()
                                                 .legend()
                                                 .colors()
-                                                .datasets(['line', 'line'])
+                                                .datasets(['line', 'line','line', 'line','line', 'line','line', 'line','line'])
                                                 .tooltip(),
                                         });
                                     @elseif($period == 365)
@@ -84,7 +84,7 @@
                                             hooks: new ChartisanHooks()
                                                 .legend()
                                                 .colors()
-                                                .datasets(['line', 'line'])
+                                                .datasets(['line','line','line','line','line','line','line','line','line'])
                                                 .tooltip(),
                                         });
                                     @endif

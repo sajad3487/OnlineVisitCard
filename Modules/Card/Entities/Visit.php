@@ -8,6 +8,7 @@ class Visit extends Model
 {
     protected $fillable = [
         'landing_id',
+        'type',
         'ip',
     ];
 }

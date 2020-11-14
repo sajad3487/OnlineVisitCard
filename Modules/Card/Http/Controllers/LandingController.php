@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Redirect;
 use Modules\Card\Http\Requests\CardRequest;
 use Modules\Card\Http\Service\CardService;
 use Modules\Card\Http\Service\LandingLogService;
@@ -82,9 +83,10 @@ class LandingController extends Controller
         if($visit == null){
             $data['ip']=$ip;
             $data['landing_id']=$id;
+            $data['type']="visit";
             $this->visitService->createVisit($data);
-            $this->landingLogService->addOrCreateVisitCounter($id);
-        };
+            $this->landingLogService->addOrCreateVisitCounter($id,"click");
+        }
         $landing = $this->landingService->getLandingById($id);
         $card = $this->cardService->getCard($landing->card_id);
         if ($landing->status == 0 || $card->status == 0){
@@ -148,6 +150,7 @@ class LandingController extends Controller
     public function dataAnalysis (Request $request){
         $active = 4;
         $period = 7;
+
         $landings = $this->landingService->getLandingWithAnalyzer(auth()->id());
         if ($request->all() != null){
             $period = $request->period;
@@ -180,22 +183,59 @@ class LandingController extends Controller
         return back();
     }
 
-    function raf_create_vcard($contact){
-        $format_name = utf8_encode($contact['name']);
-        $format_email = utf8_encode($contact['email']);
-        $format_tel = utf8_encode($contact['tel']);
-        $format_fax = utf8_encode($contact['fax']);
-        $format_www = utf8_encode($contact['website']);
-        $format_address = utf8_encode($contact['address']);
+    public function raf_create_vcard($contact){
+//        $format_name = utf8_encode($contact['name']);
+//        $format_email = utf8_encode($contact['email']);
+//        $format_tel = utf8_encode($contact['tel']);
+//        $format_fax = utf8_encode($contact['fax']);
+//        $format_www = utf8_encode($contact['website']);
+//        $format_address = utf8_encode($contact['address']);
+//        return 'BEGIN%3AVCARD%0D%0AVERSION%3A4.0%0D%0AN%3A%3B'.$format_name.'%3B%3B%3B%0D%0AFN%3A'.$format_name.'%0D%0AEMAIL%3A'.$format_email.'%0D%0AORG%3A'.$format_name.'%0D%0ATEL%3A'.$format_tel.'%0D%0ATEL%3Btype%3DFAX%3A'.$format_fax.'%0D%0AURL%3Btype%3Dpref%3A'.$format_www.'%0D%0AADR%3A%3B'.$format_address.'%3B%3B%3B%3B%3BSpain%0D%0AEND%3AVCARD';
 
-        return 'BEGIN%3AVCARD%0D%0AVERSION%3A4.0%0D%0AN%3A%3B'.$format_name.'%3B%3B%3B%0D%0AFN%3A'.$format_name.'%0D%0AEMAIL%3A'.$format_email.'%0D%0AORG%3A'.$format_name.'%0D%0ATEL%3A'.$format_tel.'%0D%0ATEL%3Btype%3DFAX%3A'.$format_fax.'%0D%0AURL%3Btype%3Dpref%3A'.$format_www.'%0D%0AADR%3A%3B'.$format_address.'%3B%3B%3B%3B%3BSpain%0D%0AEND%3AVCARD';
+        $name = $contact['name'];
+        $email = $contact['email'];
+        $mobile_no = $contact['tel'];
+        $vCard = "BEGIN:VCARD\r\n";
+        $vCard .= "VERSION:3.0\r\n";
+        $vCard .= "FN:" . $name . "\r\n";
+        $vCard .= "EMAIL;TYPE=internet,pref:" . $email . "\r\n";
+        $vCard .= "TEL;TYPE=work,voice:" . $mobile_no . "\r\n";
+        $vCard .= "END:VCARD\r\n";
+        return $vCard;
     }
 
-    function conversion($hex) {
+    public function conversion($hex) {
         $r = hexdec(substr($hex,0,2)); //Converting to rgb
         $g = hexdec(substr($hex,2,2));
         $b = hexdec(substr($hex,4,2));
 
         return $r + $g + $b; //Adding up the rgb values
+    }
+
+    public function social ($social, $landing_id){
+
+        $landing = $this->landingService->getLandingById($landing_id);
+
+        $ip = $this->GetRealIp();
+        $visit =$this->visitService->getSocialVisitByIp($ip,$landing_id,$social);
+        if($visit == null){
+            $data['ip']=$ip;
+            $data['landing_id']=$landing_id;
+            $data['type']=$social;
+            $this->visitService->createVisit($data);
+            $this->landingLogService->addOrCreateVisitCounter($landing_id,$social);
+        }
+        if ($landing[$social] != null){
+            if($social == "personal_website" || $social == "work_website"){
+                if (strpos($landing[$social], 'http') === false){
+                    return Redirect::to('http://' . $landing[$social]);
+                }else{
+                    return Redirect::to($landing[$social]);
+                }
+            }
+            return Redirect::to($landing[$social]);
+        }
+
+        return back();
     }
 }

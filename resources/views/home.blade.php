@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Fabrizio</title>
+    <title>BIT</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
     <!--end::Fonts-->
 
@@ -60,12 +60,14 @@
 
 <body>
 <!-- Hero section -->
-<section id="infinite" class="text-white tm-font-big tm-parallax" style="min-height: 750px;background-image: url({{asset($slider->file)}}">
+<section id="infinite" class="text-white tm-font-big tm-parallax" style="min-height: 750px;background-image: url({{asset($slider->file ?? '')}}">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md tm-navbar">
         <div class="container">
             <div class="tm-next">
-                <a href="#infinite" class="navbar-brand">Fabrizio</a>
+                <a href="#infinite" class="navbar-brand">
+                    <img src="{{url('media/logos/logo-transperant-1.png')}}" style="max-height: 60px">
+                </a>
             </div>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,9 +99,10 @@
 
     <div class="text-center tm-hero-text-container">
         <div class="tm-hero-text-container-inner">
-            <h2 class="tm-hero-title">{{$slider->title}}</h2>
+            <img src="{{url('media/logos/logo-transperant-1-white.png')}}" style="width: 10%" alt="">
+            <h2 class="tm-hero-title mt-10">{{$slider->title ?? ''}}</h2>
             <p class="tm-hero-subtitle">
-                {{$slider->text}}
+                {{$slider->text ?? ''}}
             </p>
             <!--begin::Form-->
         </div>
@@ -458,9 +461,9 @@
 
 
                 <div class="contact-item">
-                    <a rel="nofollow" href="tel:{{$info->text}}" class="item-link">
+                    <a rel="nofollow" href="tel:{{$info->text ?? ''}}" class="item-link">
                         <i class="fas fa-2x fa-phone-square mr-4"></i>
-                        <span class="mb-0">{{$info->text}}</span>
+                        <span class="mb-0">{{$info->text ?? ''}}</span>
                     </a>
                 </div>
                 <div class="contact-item">&nbsp;</div>

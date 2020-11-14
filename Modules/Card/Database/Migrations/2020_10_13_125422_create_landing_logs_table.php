@@ -16,8 +16,16 @@ class CreateLandingLogsTable extends Migration
         Schema::create('landing_logs', function (Blueprint $table) {
             $table->id();
             $table->integer('landing_id');
-            $table->integer('click')->default(1);
-            $table->integer('download')->default(1);
+            $table->integer('click')->default(0);
+            $table->integer('download')->default(0);
+            $table->integer('facebook')->default(0);
+            $table->integer('twitter')->default(0);
+            $table->integer('linkedin')->default(0);
+            $table->integer('skype')->default(0);
+            $table->integer('whatsapp')->default(0);
+            $table->integer('instagram')->default(0);
+            $table->integer('personal_website')->default(0);
+            $table->integer('work_website')->default(0);
 
             $table->timestamps();
         });

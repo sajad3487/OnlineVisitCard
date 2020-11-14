@@ -107,8 +107,16 @@
                                             <input type="number" name="type" value="{{$type_id}}" class="d-none">
                                         <div class="pb-5 " data-wizard-type="step-content" data-wizard-state="current">
                                             <div class="row">
-                                                <div class="col-lg-4 order-lg-2 mt-lg-20">
-                                                    <img src="{{asset('cards/01.png')}}" alt="" style="width: 100%">
+                                                <div class="col-lg-4 order-lg-2 mt-lg-20 text-center">
+                                                    <img src="
+                                                    @if($type_id ==1)
+                                                        {{asset('cards/01.png')}}
+                                                    @elseif($type_id == 2)
+                                                        {{asset('cards/02.png')}}
+                                                    @else
+                                                        {{asset('cards/03.png')}}
+                                                    @endif
+                                                        " alt="" style="width: 80%">
                                                 </div>
                                                 <div class="col-lg-8 order-lg-1">
                                                     <h3 class="mb-10 font-weight-bold  text-white">Enter Information on Card</h3>

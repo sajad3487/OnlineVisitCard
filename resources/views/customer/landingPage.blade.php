@@ -4,7 +4,7 @@
 <html data-wf-page="5ea837e8c81001b668dffd4a" data-wf-site="5ea837e8c8100167b2dffd49">
 <head>
     <meta charset="utf-8">
-    <title>Split</title>
+    <title>Fabrizio</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <link href="{{asset('css/normalize.css')}}" rel="stylesheet" type="text/css">
@@ -40,8 +40,8 @@
             <p class="bio {{$theme ?? ''}}">Email : {{$card->email ?? ''}}</p>
             <p class="bio {{$theme ?? ''}}">Phone : {{$card->tel ?? ''}}</p>
             <p class="bio {{$theme ?? ''}}">Fax : {{$card->landing->fax ?? ''}}</p>
-            <p class="{{$theme ?? ''}}">Website (Work) :<a class="{{$theme ?? ''}}" href="@if(isset($card->landing->personal_website)){{ strpos($card->landing->personal_website, 'http') === false ? 'http://' . $card->landing->personal_website : $card->landing->personal_website}}@endif" target="_blank"> {{$card->landing->work_website ?? ''}}</a></p>
-            <p class="{{$theme ?? ''}}">Website (Personal) :<a class="{{$theme ?? ''}}" href="@if(isset($card->landing->work_website)){{ strpos($card->landing->work_website, 'http') === false ? 'http://' . $card->landing->work_website : $card->landing->work_website }}@endif" target="_blank"> {{$card->landing->personal_website ?? ''}}</a></p>
+            <p class="{{$theme ?? ''}}">Website (Work) :<a class="{{$theme ?? ''}}" href="{{url("card/landing/work_website/".$card->landing->id ?? '')}}"  target="_blank"> {{$card->landing->work_website ?? ''}}</a></p>
+            <p class="{{$theme ?? ''}}">Website (Personal) :<a class="{{$theme ?? ''}}" href="{{url("card/landing/personal_website/".$card->landing->id ?? '')}}" target="_blank"> {{$card->landing->personal_website ?? ''}}</a></p>
             <div class="links w-row" style="margin-top: 40px">
                 <div class="column w-col w-col-4 text-left">
                     <div class="text-block-2 {{$theme ?? ''}}">Home Address</div>
@@ -60,19 +60,19 @@
                     </ul>
                 </div>
                 <div class="column-2 w-col w-col-4 text-center">
-                    <div class="text-block-2 {{$theme ?? ''}}">social</div>
+                    <div class="text-block-2 {{$theme ?? ''}}">social Media</div>
                     <div class="list w-list-unstyled">
                         <div class="mt-5">
-                            <a href="{{$card->landing->facebook ?? ''}}" target="_blank" class="m-4 {{$theme ?? ''}}"><i class="flaticon-facebook-letter-logo  text-success  display-5"></i></a>
-                            <a href="{{$card->landing->twitter ?? ''}}" target="_blank" class="m-4 {{$theme ?? ''}}"><i class="flaticon-twitter-logo text-success  display-5"></i></a>
+                            <a href="{{url("card/landing/facebook/".$card->landing->id)}}" class="m-4 {{$theme ?? ''}}"  target="_blank"><i class="flaticon-facebook-letter-logo  text-success  display-4"></i></a>
+                            <a href="{{url("card/landing/twitter/".$card->landing->id)}}" class="m-4 {{$theme ?? ''}}"  target="_blank"><i class="flaticon-twitter-logo text-success  display-4"></i></a>
                         </div>
                         <div class="mt-5">
-                            <a href="{{$card->landing->linkdin ?? ''}}" target="_blank" class="m-4 {{$theme ?? ''}}"><i class="flaticon-linkedin-logo text-success  display-5"></i></a>
-                            <a href="{{$card->landing->skype ?? ''}}" target="_blank" class="m-4 {{$theme ?? ''}}"><i class="flaticon-skype-logo text-success  display-5"></i></a>
+                            <a href="{{url("card/landing/linkedin/".$card->landing->id)}}" class="m-4 {{$theme ?? ''}}"  target="_blank"><i class="flaticon-linkedin-logo text-success  display-4"></i></a>
+                            <a href="{{url("card/landing/skype/".$card->landing->id)}}" class="m-4 {{$theme ?? ''}}"  target="_blank"><i class="flaticon-skype-logo text-success  display-4"></i></a>
                         </div>
                         <div class="mt-5">
-                            <a href="{{$card->landing->whatsapp ?? ''}}" target="_blank" class="m-4 {{$theme ?? ''}}"><i class="flaticon-whatsapp text-success  display-5"></i></a>
-                            <a href="{{$card->landing->instagram ?? ''}}" target="_blank" class="m-4 {{$theme ?? ''}}"><i class="flaticon-instagram-logo text-success  display-5"></i></a>
+                            <a href="{{url("card/landing/whatsapp/".$card->landing->id)}}" class="m-4 {{$theme ?? ''}}"  target="_blank"><i class="flaticon-whatsapp text-success  display-4"></i></a>
+                            <a href="{{url("card/landing/instagram/".$card->landing->id)}}" class="m-4 {{$theme ?? ''}}"  target="_blank"><i class="flaticon-instagram-logo text-success  display-4"></i></a>
                         </div>
 
 

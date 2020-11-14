@@ -23,6 +23,15 @@ class VisitRepository extends Repository
     public function getVisitLandingByIp ($ip,$landing_id){
         return Visit::where('ip',$ip)
             ->where('landing_id',$landing_id)
+            ->where('type','visit')
+            ->whereDate('created_at',Carbon::today())
+            ->first();
+    }
+
+    public function getVisitSocialByIp ($ip,$landing_id,$type){
+        return Visit::where('ip',$ip)
+            ->where('landing_id',$landing_id)
+            ->where('type',$type)
             ->whereDate('created_at',Carbon::today())
             ->first();
     }

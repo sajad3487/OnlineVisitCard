@@ -28,4 +28,8 @@ class VisitService
         return $this->visitRepo->create($data);
     }
 
+    public function getSocialVisitByIp ($ip,$id,$type){
+        return $this->visitRepo->getVisitSocialByIp($ip,$id,$type);
+    }
+
 }

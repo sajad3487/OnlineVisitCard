@@ -31,10 +31,25 @@ class YearChart extends BaseChart
     {
         $landing_id = $request->get('landing');
         $months = $this->landingLogService->getMonthLabel(12);
-        $data = $this->landingLogService->getMonthData($months,$landing_id);
+        $dataVisit = $this->landingLogService->getMonthData($months,$landing_id,"click");
+        $dataWorkWeb = $this->landingLogService->getMonthData($months,$landing_id,"work_website");
+        $dataPersonalWeb = $this->landingLogService->getMonthData($months,$landing_id,"personal_website");
+        $dataFacebook = $this->landingLogService->getMonthData($months,$landing_id,"facebook");
+        $dataTwitter = $this->landingLogService->getMonthData($months,$landing_id,"twitter");
+        $datalinkdin = $this->landingLogService->getMonthData($months,$landing_id,"linkedin");
+        $dataSkype = $this->landingLogService->getMonthData($months,$landing_id,"skype");
+        $dataWhatsapp = $this->landingLogService->getMonthData($months,$landing_id,"whatsapp");
+        $dataInstagram = $this->landingLogService->getMonthData($months,$landing_id,"instagram");
         return Chartisan::build()
             ->labels($months)
-            ->dataset('Page View', $data);
-//            ->dataset('Sample 2', [3, 2, 1]);
+            ->dataset('Page View', $dataVisit)
+            ->dataset('Work Website', $dataWorkWeb)
+            ->dataset('Personal Website', $dataPersonalWeb)
+            ->dataset('Facebook', $dataFacebook)
+            ->dataset('Twitter', $dataTwitter)
+            ->dataset('Linkedin', $datalinkdin)
+            ->dataset('Skype', $dataSkype)
+            ->dataset('WhatsApp', $dataWhatsapp)
+            ->dataset('Instagram', $dataInstagram);
     }
 }
