@@ -83,8 +83,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{url("card/$card->id/show")}}"><i class="far fa-edit text-warning mr-5 font-size-h2"></i></a>
-                                        <a href="{{url("card/landing/".$card->landing->id."/show")}}" target="_blank"><i class="flaticon-eye mr-5 text-primary font-size-h2"></i></a>
+                                        <a href="{{url("card/$card->id/show")}}"><i class="flaticon-eye mr-5 text-primary font-size-h2"></i></a>
                                         <a href="{{url("card/landing/".$card->landing->id."/edit")}}"><i class="far fa-address-card text-success mr-5 font-size-h2"></i></a>
                                         <a href="{{url("card/analysis?landing_id=".$card->landing->id."&period=7")}}"><i class="flaticon2-cardiogram text-info mr-5 font-size-h2"></i></a>
                                     </td>

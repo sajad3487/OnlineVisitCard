@@ -150,6 +150,7 @@
             <div class="d-flex flex-column-fluid flex-center">
                 <!--begin::Signin-->
                 <div class="login-form login-signin">
+                    @include('fragment.error')
                     <!--begin::Form-->
                     <form class="form" novalidate="novalidate" method="POST" action="{{ route('register') }}">
                         @csrf

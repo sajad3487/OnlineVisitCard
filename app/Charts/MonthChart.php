@@ -32,7 +32,8 @@ class MonthChart extends BaseChart
         $landing_id = $request->get('landing');
         $dates = $this->landingLogService->getLabel(30);
 
-        $dataVisit = $this->landingLogService->getData($dates,$landing_id,"visit");
+        $dataVisit = $this->landingLogService->getData($dates,$landing_id,"click");
+        $dataDownload = $this->landingLogService->getData($dates,$landing_id,"download");
         $dataWorkWeb = $this->landingLogService->getData($dates,$landing_id,"work_website");
         $dataPersonalWeb = $this->landingLogService->getData($dates,$landing_id,"personal_website");
         $dataFacebook = $this->landingLogService->getData($dates,$landing_id,"facebook");
@@ -44,6 +45,7 @@ class MonthChart extends BaseChart
         return Chartisan::build()
             ->labels($dates)
             ->dataset('Page View', $dataVisit)
+            ->dataset('Add Contact', $dataDownload)
             ->dataset('Work Website', $dataWorkWeb)
             ->dataset('Personal Website', $dataPersonalWeb)
             ->dataset('Facebook', $dataFacebook)

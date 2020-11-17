@@ -152,6 +152,10 @@ class LandingController extends Controller
         $period = 7;
 
         $landings = $this->landingService->getLandingWithAnalyzer(auth()->id());
+//        $dates = $this->landingLogService->getLabel(7);
+//
+//        $dataVisit = $this->landingLogService->getData($dates,8,"download");
+//        dd($dataVisit);
         if ($request->all() != null){
             $period = $request->period;
             $landing_id = $request->landing_id;
@@ -236,6 +240,20 @@ class LandingController extends Controller
             return Redirect::to($landing[$social]);
         }
 
+        return back();
+    }
+
+    public function addToContact($landing_id){
+
+        $ip = $this->GetRealIp();
+        $visit =$this->visitService->getSocialVisitByIp($ip,$landing_id,"download");
+        if($visit == null){
+            $data['ip']=$ip;
+            $data['landing_id']=$landing_id;
+            $data['type']="download";
+            $this->visitService->createVisit($data);
+            $this->landingLogService->addOrCreateVisitCounter($landing_id,"download");
+        }
         return back();
     }
 }

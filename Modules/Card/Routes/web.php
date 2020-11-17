@@ -38,4 +38,5 @@ Route::group(['prefix'=>'card','middleware'=>'auth'],function (){
 });
 Route::get('card/landing/{landing_id}/show','LandingController@show');
 Route::get('card/landing/{social}/{landing_id}','LandingController@social');
+Route::get('card/addCard/{landing_id}/addCard','LandingController@addToContact');
 

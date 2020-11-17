@@ -32,6 +32,7 @@ class YearChart extends BaseChart
         $landing_id = $request->get('landing');
         $months = $this->landingLogService->getMonthLabel(12);
         $dataVisit = $this->landingLogService->getMonthData($months,$landing_id,"click");
+        $dataDownload = $this->landingLogService->getMonthData($months,$landing_id,"download");
         $dataWorkWeb = $this->landingLogService->getMonthData($months,$landing_id,"work_website");
         $dataPersonalWeb = $this->landingLogService->getMonthData($months,$landing_id,"personal_website");
         $dataFacebook = $this->landingLogService->getMonthData($months,$landing_id,"facebook");
@@ -43,6 +44,7 @@ class YearChart extends BaseChart
         return Chartisan::build()
             ->labels($months)
             ->dataset('Page View', $dataVisit)
+            ->dataset('Add Contact', $dataDownload)
             ->dataset('Work Website', $dataWorkWeb)
             ->dataset('Personal Website', $dataPersonalWeb)
             ->dataset('Facebook', $dataFacebook)

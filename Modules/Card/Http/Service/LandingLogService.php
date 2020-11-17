@@ -28,6 +28,7 @@ class LandingLogService
         if($landingLog == null){
             $data['landing_id']= $landing_id;
             $data[$type]= 1;
+            $this->landingLogRepo->create($data);
         }else{
             $landing =$landingLog->toArray();
             $data[$type]= $landing[$type]+ 1;
@@ -47,12 +48,16 @@ class LandingLogService
         $data = [];
         foreach ($dates as $key=>$date){
             $info = $this->landingLogRepo->getInfoOfDate($date,$landing_id);
+
             if ($info == null){
                 $data[$key] = 0;
             }else{
                 switch ($type){
-                    case "visit":
+                    case "click":
                         $data[$key] = (int)$info->click;
+                        break;
+                    case "download":
+                        $data[$key] = (int)$info->download;
                         break;
                     case "work_website":
                         $data[$key] = (int)$info->work_website;
@@ -79,7 +84,6 @@ class LandingLogService
                         $data[$key] = (int)$info->instagram;
                         break;
                 }
-
             }
         }
         return $data;

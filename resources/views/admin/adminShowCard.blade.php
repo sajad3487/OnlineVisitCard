@@ -40,13 +40,13 @@
                             <div class="col-md-12">
                                 <div class="row mt-md-15">
                                     <div class="col-12 mr-md-0 ml-md-auto mt-4 text-center">
-                                        <a href="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl={{url("landing/$landing_url/show")}}" target="_blank">
+                                        <a href="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl={{url("card/landing/$landing_url/show")}}" target="_blank">
 {{--                                            <img class="img-fluid col-lg-4" src="{{asset('media/logos/qr.png') ?? 'landing.blade.php'}}" alt=""/>--}}
                                             <img class="img-fluid col-lg-4" src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl={{url("landing/$landing_url/show")}}" alt=""/>
                                         </a>
                                         <div class="form-group mt-5 text-left">
                                             <label>Landing Page Url</label>
-                                            <input type="email" class="form-control"  value="{{url("landing/$landing_url/show")}}"/>
+                                            <input type="text" class="form-control"  value="{{url("landing/$landing_url/show")}}"/>
                                         </div>
                                     </div>
                                 </div>

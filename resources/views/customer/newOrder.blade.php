@@ -227,7 +227,7 @@
                                                 <div class="col-xl-6">
                                                     <!--begin::Select-->
                                                     <div class="form-group">
-                                                        <label class="text-white">Word Address </label>
+                                                        <label class="text-white">Work Address </label>
                                                         <input type="text" class="form-control" name="work_address" placeholder="Work Address" value="{{old('work_address') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
