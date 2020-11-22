@@ -152,10 +152,6 @@ class LandingController extends Controller
         $period = 7;
 
         $landings = $this->landingService->getLandingWithAnalyzer(auth()->id());
-//        $dates = $this->landingLogService->getLabel(7);
-//
-//        $dataVisit = $this->landingLogService->getData($dates,8,"download");
-//        dd($dataVisit);
         if ($request->all() != null){
             $period = $request->period;
             $landing_id = $request->landing_id;
@@ -188,13 +184,6 @@ class LandingController extends Controller
     }
 
     public function raf_create_vcard($contact){
-//        $format_name = utf8_encode($contact['name']);
-//        $format_email = utf8_encode($contact['email']);
-//        $format_tel = utf8_encode($contact['tel']);
-//        $format_fax = utf8_encode($contact['fax']);
-//        $format_www = utf8_encode($contact['website']);
-//        $format_address = utf8_encode($contact['address']);
-//        return 'BEGIN%3AVCARD%0D%0AVERSION%3A4.0%0D%0AN%3A%3B'.$format_name.'%3B%3B%3B%0D%0AFN%3A'.$format_name.'%0D%0AEMAIL%3A'.$format_email.'%0D%0AORG%3A'.$format_name.'%0D%0ATEL%3A'.$format_tel.'%0D%0ATEL%3Btype%3DFAX%3A'.$format_fax.'%0D%0AURL%3Btype%3Dpref%3A'.$format_www.'%0D%0AADR%3A%3B'.$format_address.'%3B%3B%3B%3B%3BSpain%0D%0AEND%3AVCARD';
 
         $name = $contact['name'];
         $email = $contact['email'];
