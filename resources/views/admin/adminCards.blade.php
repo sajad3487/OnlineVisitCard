@@ -68,8 +68,9 @@
                                     </td>
                                     <td>
                                         <a href="{{url("admin/card/$card->id/show")}}"><i class="far fa-edit text-warning mr-5 font-size-h2"></i></a>
+                                        <a href="{{url("admin/card/$card->id/downloadCard")}}"><i class="fas fa-download text-success mr-5 font-size-h2"></i></a>
                                         <a href="{{url("card/landing/".$card->landing->id."/show")}}" target="_blank"><i class="flaticon-eye mr-5 text-primary font-size-h2"></i></a>
-                                        <a href="{{url("admin/landing/".$card->landing->id."/edit")}}"><i class="far fa-address-card text-success mr-5 font-size-h2"></i></a>
+                                        <a href="{{url("admin/landing/".$card->landing->id."/edit")}}"><i class="far fa-address-card text-danger mr-5 font-size-h2"></i></a>
                                         <a href="{{url("admin/analysis/".$card->landing->id)}}"><i class="flaticon2-cardiogram text-info mr-5 font-size-h2"></i></a>
                                     </td>
                                 </tr>
