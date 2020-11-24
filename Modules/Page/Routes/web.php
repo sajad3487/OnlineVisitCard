@@ -13,3 +13,4 @@
 
 
 Route::get('/','PageController@firstPage');
+Route::get('/privacy_policy', 'PageController@privacy');

@@ -72,27 +72,54 @@ class AdminCardController extends Controller
     }
 
     public function downloadCard ($card_id){
-
         $card = $this->cardService->getCard($card_id);
+
+//        Create the name
+        $im = imagecreatetruecolor(400, 50);
+        $white = imagecolorallocate($im, 255, 255, 255);
+        $black = imagecolorallocate($im, 0, 0, 0);
+        imagefilledrectangle($im, 0, 0, 399, 50, $white);
+        $text = $card->fname.' '.$card->lname;
+        $font = realpath('arial.ttf');;
+        imagettftext($im, 35, 0, 0, 35, $black, $font, $text);
+        imagepng($im,'name.png');
+
+//        Create the card with logo
+
         if ($card->type !=3){
             $image1 = 'cardTemp/01.png';
         }else{
             $image1 = 'cardTemp/03.png';
         }
-        $image2 = 'images/download.png';
 
-        list($width,$height) = getimagesize($image2);
-        $image1 = imagecreatefromstring(file_get_contents($image1));
-        $image2 = imagecreatefromstring(file_get_contents($image2));
-        imagealphablending($image1, false);
-        imagesavealpha($image1, true);
-        imagecopymerge($image1,$image2,80,80,0,0,$width,$height,100);
-//        header('Content-Type:image/png');
-//        imagepng($image1);
+        if ($card->type != 1){
+//            $image2 = 'logo/05.jpg';
+//            $image2 = 'images/download.png';
+            $image2 = $card->logo;
+            $image2 = ltrim($image2, '/');
+            list($width,$height) = getimagesize($image2);
+            $image1 = imagecreatefrompng($image1);
+            $image2 = imagecreatefromjpeg($image2);
+            imagealphablending($image1, false);
+            imagesavealpha($image1, true);
+
+            imagecopymerge($image1,$image2,80,80,0,0,$width,$height,100);
+        }else{
+            $image2 = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl="card/landing/'.$card->landing->id.'/show"';
+
+            list($width,$height) = getimagesize($image2);
+            $image1 = imagecreatefrompng($image1);
+            $image2 = imagecreatefrompng($image2);
+            imagealphablending($image1, false);
+            imagesavealpha($image1, true);
+
+            imagecopymerge($image1,$image2,50,50,0,0,$width,$height,100);
+        }
 
         imagepng($image1,'merged.png');
 
-        $image22 = 'images/download.png';
+//        Create the final card
+        $image22 = 'name.png';
         $image11 = 'merged.png';
 
         list($width,$height) = getimagesize($image22);
@@ -106,6 +133,8 @@ class AdminCardController extends Controller
 
         imagepng($image11,'pic/merged-03.png');
 
+
+//        Download Card
         $path = "pic/merged-03.png";
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
@@ -117,5 +146,37 @@ class AdminCardController extends Controller
         flush(); // Flush system output buffer
         readfile($path);
 
+    }
+
+    public function downloadCardBack ($card_id){
+        $card = $this->cardService->getCard($card_id);
+
+//        Create the back of card
+        $image1 = 'cardTemp/02.png';
+        $image2 = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl="card/landing/'.$card->landing->id.'/show"';
+
+        list($width,$height) = getimagesize($image2);
+        $image1 = imagecreatefrompng($image1);
+        $image2 = imagecreatefrompng($image2);
+        imagealphablending($image1, false);
+        imagesavealpha($image1, true);
+
+        imagecopymerge($image1,$image2,350,170,0,0,$width,$height,100);
+
+        imagepng($image1,'pic/merged_back.png');
+
+
+
+//        Download Card
+        $path = "pic/merged_back.png";
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="'.basename($path).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($path));
+        flush(); // Flush system output buffer
+        readfile($path);
     }
 }

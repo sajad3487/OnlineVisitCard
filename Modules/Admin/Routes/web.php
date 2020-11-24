@@ -11,6 +11,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
             Route::get('/{user_id}/userCards','AdminCardController@userCards');
             Route::post('/{card_id}/changeStatus','AdminCardController@changeStatus');
             Route::get('/{card_id}/downloadCard','AdminCardController@downloadCard');
+            Route::get('/{card_id}/downloadCardBack','AdminCardController@downloadCardBack');
 
         });
 

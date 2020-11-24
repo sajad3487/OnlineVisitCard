@@ -48,4 +48,10 @@ class PageController extends Controller
         $info = $this->sectionService->getSection("info");
         return view('home',compact('slider','wwdheader','wwd1','wwd2','wwd3','wwd4','testimonial_header','testimonials','price_header','type1','type2','type3','type4','type5','type6','contact','info'));
     }
+
+
+    public function privacy (){
+        return view('privacyPolicy');
+    }
+
 }

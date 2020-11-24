@@ -91,6 +91,8 @@
                         <a class="nav-link tm-nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
+                <a class="nav-link tm-nav-link" href="{{url('/privacy_policy')}}">Privacy Policy</a>
+
                 <a class="nav-link tm-nav-link" href="{{url('/login')}}">Login</a>
 
             </div>

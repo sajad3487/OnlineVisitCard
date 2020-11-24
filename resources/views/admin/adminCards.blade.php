@@ -37,7 +37,7 @@
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Company Name</th>
-                                    <th>Position</th>
+                                    <th>type</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -50,7 +50,15 @@
                                     <td>{{$card->fname}}</td>
                                     <td>{{$card->lname}}</td>
                                     <td>{{$card->company_name}}</td>
-                                    <td>{{$card->position}}</td>
+                                    <td>
+                                        @if($card->type == 1)
+                                            Type A
+                                        @elseif($card->type ==2)
+                                            Type B
+                                        @else
+                                            Type C
+                                        @endif
+                                    </td>
                                     <td>
                                         @if($card->status == 1)
                                             <span class="label label-inline label-light-primary font-weight-bold">
@@ -68,10 +76,17 @@
                                     </td>
                                     <td>
                                         <a href="{{url("admin/card/$card->id/show")}}"><i class="far fa-edit text-warning mr-5 font-size-h2"></i></a>
-                                        <a href="{{url("admin/card/$card->id/downloadCard")}}"><i class="fas fa-download text-success mr-5 font-size-h2"></i></a>
+
                                         <a href="{{url("card/landing/".$card->landing->id."/show")}}" target="_blank"><i class="flaticon-eye mr-5 text-primary font-size-h2"></i></a>
                                         <a href="{{url("admin/landing/".$card->landing->id."/edit")}}"><i class="far fa-address-card text-danger mr-5 font-size-h2"></i></a>
                                         <a href="{{url("admin/analysis/".$card->landing->id)}}"><i class="flaticon2-cardiogram text-info mr-5 font-size-h2"></i></a>
+                                        <a href="{{url("admin/card/$card->id/downloadCard")}}"><i class="fas fa-download text-success mr-5 font-size-h2"></i></a>
+                                        @if($card->type != 1)
+                                            <a href="{{url("admin/card/$card->id/downloadCardBack")}}"><i class="fas fa-file-download text-success mr-5 font-size-h2"></i></a>
+                                            @else
+                                            <a><i class="text-success mr-5 font-size-h2"></i><i class="text-success mr-5 font-size-h2"></i></a>
+
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach
