@@ -39,7 +39,7 @@
                                     <div class="row">
                                         <div class="col-lg-5"></div>
                                         <div class="col-lg-7">
-                                            <a href="{{url('/admin/contact')}}" type="reset" class="btn btn-secondary col-md-2 mr-2">Back</a>
+                                            <a href="{{url('/admin/contact')}}" type="reset" class="btn btn-secondary  mr-2">Back</a>
                                         </div>
                                     </div>
                                 </div>

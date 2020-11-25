@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 //Route::post('login',function (Request $request){
 //        dd($request->all());
 //});
@@ -23,12 +23,14 @@ Auth::routes();
 Route::group(['middleware'=>'auth'],function (){
    Route::group(['middleware'=>'CheckUser'],function (){
 
-       Route::get('/home', 'HomeController@index')->name('home');
+       Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 
        Route::group(['prefix'=>'profile','middleware'=>'auth'],function (){
-           Route::get('/','HomeController@profile');
-           Route::post('/update','HomeController@updateProfile');
+           Route::get('/','HomeController@profile')->middleware('verified');
+           Route::post('/update','HomeController@updateProfile')->middleware('verified');
        });
    });
 });
+
+Route::get('send','mailController@send');
