@@ -78,6 +78,9 @@ class CardController extends Controller
         $data['position'] = $request->position;
         $data['color'] = $request->color;
         $data['type'] = $request->type;
+        if($data['color'] == null){
+            unset($data['color']);
+        }
         $card = $this->cardService->createCard($data);
         $data = $request->all();
         $data['card_id']=$card->id;

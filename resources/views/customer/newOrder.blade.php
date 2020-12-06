@@ -329,8 +329,8 @@
                                                 <div class="col-xl-6">
                                                     <!--begin::Select-->
                                                     <div class="form-group">
-                                                        <label class="text-white">Linkdin </label>
-                                                        <input type="text" name="linkdin" class="form-control"  placeholder="Enter Your Linkdin Page address" value="{{old('linkdin') ?? ''}}"/>
+                                                        <label class="text-white">Linkedin </label>
+                                                        <input type="text" name="linkdin" class="form-control"  placeholder="Enter Your Linkedin Page address" value="{{old('linkdin') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
                                                 </div>
@@ -348,7 +348,7 @@
                                                     <!--begin::Select-->
                                                     <div class="form-group">
                                                         <label class="text-white">WhatsApp </label>
-                                                        <input type="text" name="whatsapp" class="form-control"  placeholder="Enter Your WhatsApp Page address" value="{{old('whatsapp') ?? ''}}"/>
+                                                        <input type="text" name="whatsapp" class="form-control"  placeholder="Enter Your WhatsApp number" value="{{old('whatsapp') ?? ''}}"/>
                                                     </div>
                                                     <!--end::Select-->
                                                 </div>
