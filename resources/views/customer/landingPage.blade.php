@@ -32,13 +32,13 @@
     <div class="leftcontent w-col w-col-6 w-col-stack">
         <div style="opacity:1left; background-image: url({{$card->landing->picture ?? $card->logo ?? ''}})" class="image"></div>
     </div>
-    <div class="rightcontent w-col w-col-6 w-col-stack">
+    <div class="rightcontent w-col w-col-6 w-col-stack py-2">
         <div data-w-id="3fd5aeb3-22da-ed60-7286-0d11f16597d3" style="opacity:0" class="content">
-            <h4 class="name {{$theme ?? ''}}">{{$card->company_name}}</h4>
-            <div class=" {{$theme ?? ''}}">{{$card->position}}</div>
-            <h1 class="tagline"><strong class="bold-text {{$theme ?? ''}}">{{$card->fname." ".$card->lname}}</strong></h1>
-            <p class="bio {{$theme ?? ''}}">Email : {{$card->email ?? ''}}</p>
-            <p class="bio {{$theme ?? ''}}">Phone : {{$card->tel ?? ''}}</p>
+            <h3 class="name {{$theme ?? ''}}">{{$card->company_name ?? ''}}</h3>
+            <div class=" {{$theme ?? ''}}"><h4>{{$card->position ?? ''}}</h4></div>
+            <h3 class="tagline"><strong class=" {{$theme ?? ''}}">{{$card->fname." ".$card->lname ?? ''}}</strong></h3>
+            <p class="bio {{$theme ?? ''}}">Email : <a href="mailto:{{$card->email ?? ''}}">{{$card->email ?? ''}}</a></p>
+            <p class="bio {{$theme ?? ''}}">Phone : <a href="tel:{{$card->tel ?? ''}}">{{$card->tel ?? ''}}</a></p>
             <p class="bio {{$theme ?? ''}}">Fax : {{$card->landing->fax ?? ''}}</p>
             <p class="{{$theme ?? ''}}">Website (Work) :<a class="{{$theme ?? ''}}" href="{{url("card/landing/work_website/".$card->landing->id ?? '')}}"  target="_blank"> {{$card->landing->work_website ?? ''}}</a></p>
             <p class="{{$theme ?? ''}}">Website (Personal) :<a class="{{$theme ?? ''}}" href="{{url("card/landing/personal_website/".$card->landing->id ?? '')}}" target="_blank"> {{$card->landing->personal_website ?? ''}}</a></p>

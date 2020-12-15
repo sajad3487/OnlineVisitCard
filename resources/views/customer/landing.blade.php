@@ -61,11 +61,11 @@
                                 <tbody>
                                 @foreach($landings as $landing)
                                     <tr class="text-center">
-                                        <td>{{$landing->card->id}}</td>
-                                        <td>{{$landing->card->fname}}</td>
-                                        <td>{{$landing->card->lname}}</td>
-                                        <td>{{$landing->card->company_name}}</td>
-                                        <td>{{$landing->card->position}}</td>
+                                        <td>{{$landing->card->id ?? ''}}</td>
+                                        <td>{{$landing->card->fname ?? ''}}</td>
+                                        <td>{{$landing->card->lname ?? ''}}</td>
+                                        <td>{{$landing->card->company_name ?? ''}}</td>
+                                        <td>{{$landing->card->position ?? ''}}</td>
                                         <td>
                                             <a href="{{url("card/landing/$landing->id/changeStatus")}}">
                                                 @if($landing->status == 1)

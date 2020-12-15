@@ -225,6 +225,8 @@ class LandingController extends Controller
                 }else{
                     return Redirect::to($landing[$social]);
                 }
+            }elseif ($social == "whatsapp"){
+                return Redirect::to('https://wa.me/' . $landing[$social]);
             }
             return Redirect::to($landing[$social]);
         }

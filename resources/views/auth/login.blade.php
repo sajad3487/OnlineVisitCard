@@ -53,7 +53,7 @@
 
                 <!--begin::Aside title-->
                 <h3 class="font-weight-bolder text-center font-size-h4 font-size-h1-lg" style="color: #986923;">
-                    Create Your New Card<br/>
+                    crea il tua nuova biglietto<br/>
 
                 </h3>
                 <!--end::Aside title-->
@@ -78,14 +78,14 @@
                         @csrf
                         <!--begin::Title-->
                         <div class="pb-13 pt-lg-0 pt-5">
-                            <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to Fabrizio</h3>
-                            <span class="text-muted font-weight-bold font-size-h4">New Here? <a href="{{url('/register')}}" id="kt_login_signup" class="text-primary font-weight-bolder">Create an Account</a></span>
+                            <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Benvenuta in BIT</h3>
+                            <span class="text-muted font-weight-bold font-size-h4">Sei nuovo? <a href="{{url('/register')}}" id="kt_login_signup" class="text-primary font-weight-bolder">Crea un Account</a></span>
                         </div>
                         <!--begin::Title-->
 
                         <!--begin::Form group-->
                         <div class="form-group">
-                            <label class="font-size-h6 font-weight-bolder text-dark">{{ __('E-Mail Address') }}</label>
+                            <label class="font-size-h6 font-weight-bolder text-dark">E-mail</label>
                             <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg @error('email') is-invalid @enderror" type="email" id="email" name="email" value="{{ old('email') }}" autocomplete="off"/>
                             @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -101,7 +101,7 @@
                                 <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
                                 @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}" class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5" >
-                                        {{ __('Forgot Your Password?') }}
+                                        Password Dimenticato
                                     </a>
                                 @endif
 

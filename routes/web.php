@@ -24,8 +24,6 @@ Route::group(['middleware'=>'auth'],function (){
    Route::group(['middleware'=>'CheckUser'],function (){
 
        Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-
-
        Route::group(['prefix'=>'profile','middleware'=>'auth'],function (){
            Route::get('/','HomeController@profile')->middleware('verified');
            Route::post('/update','HomeController@updateProfile')->middleware('verified');

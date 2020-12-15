@@ -79,16 +79,16 @@
                         <a class="nav-link tm-nav-link" href="#infinite">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link" href="#whatwedo">What is Bit</a>
+                        <a class="nav-link tm-nav-link" href="#whatwedo">Cos'è BIT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link tm-nav-link" href="#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link" href="#gallery">Prices</a>
+                        <a class="nav-link tm-nav-link" href="#gallery">Prezzi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tm-nav-link" href="#contact">Contact</a>
+                        <a class="nav-link tm-nav-link" href="#contact">Contatti</a>
                     </li>
                 </ul>
                 <a class="nav-link tm-nav-link" href="{{url('/privacy_policy')}}">Privacy Policy</a>
@@ -243,11 +243,11 @@
 
                             <!--begin::Content-->
                             <span class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">{{$type1->name ?? ''}}</span>
-                            <h4 class="font-size-h6 d-block d-block font-weight-bold mb-7 text-dark-50">Price : {{$type1->price ?? ''}} $</h4>
-                            <p class="mb-15 d-flex flex-column">
+                            <h4 class="font-size-h6 d-block d-block font-weight-bold mb-7 text-dark-50">Price : {{$type1->price ?? ''}} &euro;</h4>
+                            <p class="mb-15 d-flex flex-column font-size-h3">
                                 <span>{{$type1->description ?? ''}}</span>
                             </p>
-                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Acquista</a>
                             <!--end::Content-->
                         </div>
                     </div>
@@ -276,11 +276,11 @@
 
                             <!--begin::Content-->
                             <span class="font-size-h1 d-block font-weight-boldest text-dark-75 py-2">{{$type2->name ?? ''}}</span>
-                            <h4 class="font-size-h6 d-block font-weight-bold mb-7 text-dark-50">Price : {{$type2->price ?? ''}} $</h4>
-                            <p class="mb-15 d-flex flex-column">
+                            <h4 class="font-size-h6 d-block font-weight-bold mb-7 text-dark-50">Price : {{$type2->price ?? ''}} &euro;</h4>
+                            <p class="mb-15 d-flex flex-column font-size-h3">
                                 <span>{{$type2->description ?? ''}}</span>
                             </p>
-                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Acquista</a>
                             <!--end::Content-->
                         </div>
                     </div>
@@ -309,11 +309,11 @@
 
                             <!--begin::Content-->
                             <span class="font-size-h1 d-block font-weight-boldest text-dark-75 py-2">{{$type3->name ?? ''}}</span>
-                            <h4 class="font-size-h6 d-block font-weight-bold mb-7 text-dark-50">Price : {{$type3->name ?? ''}} $</h4>
-                            <p class="mb-15 d-flex flex-column">
+                            <h4 class="font-size-h6 d-block font-weight-bold mb-7 text-dark-50">Price : {{$type3->name ?? ''}} &euro;</h4>
+                            <p class="mb-15 d-flex flex-column font-size-h3">
                                 <span>{{$type3->description ?? ''}}</span>
                             </p>
-                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Acquista</a>
                             <!--end::Content-->
                         </div>
                     </div>
@@ -346,11 +346,11 @@
 
                             <!--begin::Content-->
                             <span class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">{{$type4->name ?? ''}}</span>
-                            <h4 class="font-size-h6 d-block d-block font-weight-bold mb-7 text-dark-50">Price : {{$type4->price ?? ''}} $</h4>
-                            <p class="mb-15 d-flex flex-column">
+                            <h4 class="font-size-h6 d-block d-block font-weight-bold mb-7 text-dark-50">Price : {{$type4->price ?? ''}} &euro;</h4>
+                            <p class="mb-15 d-flex flex-column font-size-h3">
                                 <span>{{$type4->description ?? ''}}</span>
                             </p>
-                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Acquista</a>
                             <!--end::Content-->
                         </div>
                     </div>
@@ -379,11 +379,11 @@
 
                             <!--begin::Content-->
                             <span class="font-size-h1 d-block font-weight-boldest text-dark-75 py-2">{{$type5->name ?? ''}}</span>
-                            <h4 class="font-size-h6 d-block font-weight-bold mb-7 text-dark-50">Price : {{$type5->price ?? ''}} $</h4>
-                            <p class="mb-15 d-flex flex-column">
+                            <h4 class="font-size-h6 d-block font-weight-bold mb-7 text-dark-50">Price : {{$type5->price ?? ''}} &euro;</h4>
+                            <p class="mb-15 d-flex flex-column font-size-h3">
                                 <span>{{$type5->description ?? ''}}</span>
                             </p>
-                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Acquista</a>
                             <!--end::Content-->
                         </div>
                     </div>
@@ -412,11 +412,11 @@
 
                             <!--begin::Content-->
                             <span class="font-size-h1 d-block font-weight-boldest text-dark-75 py-2">{{$type6->name ?? ''}}</span>
-                            <h4 class="font-size-h6 d-block font-weight-bold mb-7 text-dark-50">Price :{{$type6->price ?? ''}} $</h4>
-                            <p class="mb-15 d-flex flex-column">
+                            <h4 class="font-size-h6 d-block font-weight-bold mb-7 text-dark-50">Price :{{$type6->price ?? ''}} &euro;</h4>
+                            <p class="mb-15 d-flex flex-column font-size-h3">
                                 <span>{{$type6->description ?? ''}}</span>
                             </p>
-                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</a>
+                            <a href="#" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Acquista</a>
                             <!--end::Content-->
 
                         </div>
@@ -445,10 +445,10 @@
             <div class="col-sm-12 col-md-6">
                 <form action="{{url('contact/create')}}" method="post">
                     @csrf
-                    <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
-                    <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
-                    <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
-                    <button type="submit" class="btn tm-btn-submit">Submit</button>
+                    <input id="name" name="name" type="text" placeholder="il tuo nome" class="tm-input" required />
+                    <input id="email" name="email" type="email" placeholder="la tua email" class="tm-input" required />
+                    <textarea id="message" name="message" rows="8" placeholder="Messaggio" class="tm-input" required></textarea>
+                    <button type="submit" class="btn tm-btn-submit">Invia</button>
                 </form>
             </div>
 
@@ -479,7 +479,7 @@
 
     <footer class="text-center small tm-footer">
         <p class="mb-0">
-            Copyright &copy; 2020 Company Name
+            Copyright &copy; 2020 BIT
 
             . <a rel="nofollow" href="https://www.tooplate.com" title="HTML templates">Designed by TOOPLATE</a></p>
     </footer>
