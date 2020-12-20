@@ -28,7 +28,7 @@
                                         <label for="exampleSelect1">Select Card</label>
                                         <select class="form-control" name="landing_id" id="exampleSelect1">
                                             @foreach($landings as $landing)
-                                                <option value="{{$landing->id}}" @if($landing->id == $landing_id) selected @endif>{{$landing->card->fname." ". $landing->card->lname}}</option>
+                                                <option value="{{$landing->id}}" @if($landing->id == $landing_id) selected @endif>{{$landing->card->fname." ". $landing->card->lname }}</option>
                                             @endforeach
                                         </select>
                                     </div>

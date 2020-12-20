@@ -4,7 +4,7 @@
 <head>
     <base href="{{url('/')}}">
     <meta charset="utf-8"/>
-    <title>Fabrizio</title>
+    <title>BIT official</title>
     <meta name="description" content="Aside light theme example"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 

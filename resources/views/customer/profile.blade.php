@@ -54,7 +54,7 @@
                                     <div class="row">
                                         <div class="col-lg-5"></div>
                                         <div class="col-lg-7">
-                                            <a href="{{url('/admin/users')}}" type="reset" class="btn btn-secondary col-md-2 mr-2">Back</a>
+                                            <a href="{{url('/home')}}" type="reset" class="btn btn-secondary col-md-2 mr-2">Back</a>
                                             <button type="submit" class="btn btn-success col-md-2">Save</button>
                                         </div>
                                     </div>
